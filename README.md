@@ -1,4 +1,3 @@
-assemble-examples-basic
-=======================
+# assemble-examples-basic
 
-Demonstrates how to use Assemble to build a site. Includes layouts, pages, partials, and markdown content.
+Demonstrates how to use Assemble to build a site. Example includes layouts, pages, partials, and markdown content.

@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/bootstrap.css">
+    <link rel="stylesheet" href="assets/pygments.css">
+    
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav">
+        <li><a href="index.html">Index</a></li>
+        <li><a href="context.html">Context</a></li>
+        <li><a href="basic.html">Basic</a></li>
+        <li><a href="markdown.html">Markdown</a></li>
+        
+      </ul>
+      <ul class="nav"><li><a href="http://github.com/assemble/">Visit Assemble</a></li></ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      
+<div class="page-header">
+  <h1>Home</h1>
+  <p class="lead">Welcome to our Site!</p>
+</div>
+
+<p> At the top of each page in this example, there is a section for providing metadata about the page, this is called <a href="https://github.com/assemble/assemble/wiki/YAML-Front-Matter">YAML Front-Matter</a></p>
+
+
+<h1>First-level heading</h1>
+<h2>Second-level Heading</h2>
+<h3>Third-level Heading</h3>
+<h4>Fourth-level heading</h4>
+<pre><code class="lang-md"># First-level heading
+
+## Second-level Heading
+
+### Third-level Heading
+
+#### Fourth-level heading</code></pre>
+<h2>Paragraphs</h2>
+<p>This is a paragraph. It has two sentences.</p>
+<p>This is another paragraph. It also has
+two sentences.</p>
+<pre><code class="lang-md">This is a paragraph. It has two sentences.
+
+This is another paragraph. It also has
+two sentences.</code></pre>
+<h2>Lists</h2>
+<ul>
+<li>An item in a bulleted (unordered) list<ul>
+<li>A subitem, indented with 4 spaces</li>
+</ul>
+</li>
+<li>Another item in a bulleted list</li>
+</ul>
+<ol>
+<li>An item in an enumerated (ordered) list
+1.1. A subitem, indented with 4 spaces</li>
+<li>Another item in an enumerated list</li>
+</ol>
+<pre><code class="lang-md">* An item in a bulleted (unordered) list
+    * A subitem, indented with 4 spaces
+* Another item in a bulleted list
+1. An item in an enumerated (ordered) list
+   1.1. A subitem, indented with 4 spaces
+2. Another item in an enumerated list</code></pre>
+<h2>Line return</h2>
+<p>Line breaks inserted in the text are removed from the final result: the web browser is in charge of breaking lines depending on the available space. To force a line break, insert two spaces at the end of the line.</p>
+<h2>Emphasized text</h2>
+<p><strong>strong emphasis</strong> or <strong>strong emphasis</strong> (e.g., boldface)</p>
+<pre><code class="lang-md">**strong emphasis** or __strong emphasis__ (e.g., boldface)</code></pre>
+<h2>Code</h2>
+<p>To include code (formatted in monospace font), you can either surround inline code with backticks (`), like in:</p>
+<p>Some text with <code>some code</code> inside.</p>
+<pre><code class="lang-md">Some text with `some code` inside.</code></pre>
+<p>Or indent several lines of code by at least four spaces, as in:</p>
+<pre><code>line 1 of code
+line 2 of code
+line 3 of code</code></pre>
+<pre><code class="lang-md">    line 1 of code
+    line 2 of code
+    line 3 of code</code></pre>
+<p>The latter option makes Markdown retain all whitespace—as opposed to the usual behaviour, which, by removing line breaks and excess spaces, would break indentation and code layout.</p>
+<h2>Escaping</h2>
+<p>Use <code>\</code> for escaping code, such as handlebars templates, so the following:</p>
+<pre><code class="lang-md">{{ page.title }}</code></pre>
+<p>would translate literally.</p>
+<h2>Line breaks</h2>
+<p>When you do want to insert a break tag using Markdown, you end a line with two or more spaces, then type return. For example:</p>
+<pre><code class="lang-md">def show_results
+tag_br space space
+end</code></pre>
+<p>Result:</p>
+<pre><code class="lang-html">def show_results
+
+end</code></pre>
+<p>You can also use two newlines. For example:</p>
+<pre><code>sentence A
+
+sentence B</code></pre>
+<p>Result:</p>
+<pre><code class="lang-html">sentence A
+sentence B</code></pre>
+<h2>Blockquotes</h2>
+<blockquote>
+<p>&quot;This entire paragraph of text will be enclosed in an HTML blockquote element.
+Blockquote elements are reflowable. You may arbitrarily
+wrap the text to your liking, and it will all be parsed
+into a single blockquote element.&quot;</p>
+</blockquote>
+<pre><code class="lang-md">&gt; &quot;This entire paragraph of text will be enclosed in an HTML blockquote element.
+Blockquote elements are reflowable. You may arbitrarily
+wrap the text to your liking, and it will all be parsed
+into a single blockquote element.&quot;</code></pre>
+<p>The above would translate into the following HTML:</p>
+<pre><code class="lang-html">&lt;blockquote&gt;&lt;p&gt;This entire paragraph of text will be enclosed in an HTML blockquote element. Blockquote
+elements are reflowable. You may arbitrarily wrap the text to your liking, and it will all
+be parsed into a single blockquote element.&lt;/p&gt;&lt;/blockquote&gt;</code></pre>
+<h2>External links</h2>
+<p>Links may be included inline:</p>
+<pre><code class="lang-md">[link text here](link.address.here)
+Ex. [Markdown](http://en.wikipedia.com/wiki/Markdown)</code></pre>
+<p>Alternatively, links can be placed in footnotes outside of the paragraph, being referenced with some sort of reference tag. For example, including the following inline:</p>
+<pre><code class="lang-md">[link text here][linkref]</code></pre>
+<p>would produce a link if the following showed up outside of the paragraph (or at the end of the document):</p>
+<pre><code class="lang-md">
+[linkref]: link.address.here &quot;link title here&quot;</code></pre>
+<h2>Images</h2>
+<p>Images have similar syntax to links with a preceding exclamation point.</p>
+<pre><code class="lang-md">![Alt text](/path/to/img.jpg)</code></pre>
+<p>or</p>
+<pre><code class="lang-md">![Alt text](/path/to/img.jpg &quot;Optional title&quot;)</code></pre>
+<p>Like links, Images also have a footnote style syntax</p>
+<pre><code class="lang-md">![Alt text][id]</code></pre>
+<p>with a reference later in the document defining the url location</p>
+<pre><code class="lang-md">
+[id]: url/to/image  &quot;Optional title attribute&quot;</code></pre>
+<h2>Horizontal rules</h2>
+<p>Horizontal rules are created by placing three or more hyphens, asterisks, or underscores on a line by themselves. You may use spaces between the hyphens or asterisks. Each of the following lines will produce a horizontal rule:</p>
+<pre><code class="lang-md">* * *
+***
+*****
+- - -
+---------------------------------------</code></pre>
+<h2>More</h2>
+<p>Here is a markdown link to <a href="http://assemble.io">Assemble</a>, and a literal <a href="http://assemble.io/">http://assemble.io/</a>. </p>
+<p>Now some inline markup like <em>italics</em>,  <strong>bold</strong>, and <code>code()</code>. </p>
+<p><img src="/images/photo.jpg" alt="picture alt" title="Title is optional"></p>
+<blockquote>
+<p>Blockquotes are like quoted text in email replies</p>
+<blockquote>
+<p>And, they can be nested</p>
+</blockquote>
+</blockquote>
+<h4>Lists</h4>
+<ul>
+<li>Bullet lists are easy too</li>
+</ul>
+<ul>
+<li>Another one</li>
+</ul>
+<ul>
+<li>Another one</li>
+</ul>
+<ol>
+<li>A numbered list</li>
+<li>Which is numbered</li>
+<li>With periods and a space</li>
+</ol>
+<h4>Code</h4>
+<p>And now some code:</p>
+<pre><code>// Code is just text indented a bit
+which(is_easy) to_remember();</code></pre>
+<pre><code class="lang-js">// GFM also allows un-indented code blocks
+
+if (this_is_more_code == true &amp;&amp; !indented) {
+    // code blocks, &quot;fenced&quot; with backticks, also not indented
+}</code></pre>
+<h4>Text</h4>
+<p>Text with
+two trailing spaces
+(on the right)
+can be used
+for things like poems</p>
+<h4>Horizontal rules</h4>
+<hr>
+<h2><em>**</em></h2>
+<h4>HTML elements</h4>
+<p>&lt;div class=&quot;alert alert-warning&quot;&gt; This is a div wrapping some <strong>markdown</strong>.&lt;/div&gt;
+
+</p>
+<p>&lt;div class=&quot;custom-class&quot; markdown=&quot;1&quot;&gt;
+This is a div wrapping some <strong>markdown</strong>.
+&lt;/div&gt;
+
+
+</p>
+<h4>Tables</h4>
+<table>
+<thead>
+<tr>
+<th>Heading 1</th>
+<th>Heading 2</th>
+<th>Heading 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Outer pipes on tables are optional</li>
+<li>Colon used for alignment (right versus left)</li>
+</ul>
+<p>*[ABBR]: Markdown plus abbreviations (produces an &lt;abbr&gt; tag)</p>
+
+
+
+<h1>First-level heading</h1>
+<h2>Second-level Heading</h2>
+<h3>Third-level Heading</h3>
+<h4>Fourth-level heading</h4>
+<pre><code class="lang-md"># First-level heading
+
+## Second-level Heading
+
+### Third-level Heading
+
+#### Fourth-level heading</code></pre>
+<h2>Paragraphs</h2>
+<p>This is a paragraph. It has two sentences.</p>
+<p>This is another paragraph. It also has
+two sentences.</p>
+<pre><code class="lang-md">This is a paragraph. It has two sentences.
+
+This is another paragraph. It also has
+two sentences.</code></pre>
+<h2>Lists</h2>
+<ul>
+<li>An item in a bulleted (unordered) list<ul>
+<li>A subitem, indented with 4 spaces</li>
+</ul>
+</li>
+<li>Another item in a bulleted list</li>
+</ul>
+<ol>
+<li>An item in an enumerated (ordered) list
+1.1. A subitem, indented with 4 spaces</li>
+<li>Another item in an enumerated list</li>
+</ol>
+<pre><code class="lang-md">* An item in a bulleted (unordered) list
+    * A subitem, indented with 4 spaces
+* Another item in a bulleted list
+1. An item in an enumerated (ordered) list
+   1.1. A subitem, indented with 4 spaces
+2. Another item in an enumerated list</code></pre>
+<h2>Line return</h2>
+<p>Line breaks inserted in the text are removed from the final result: the web browser is in charge of breaking lines depending on the available space. To force a line break, insert two spaces at the end of the line.</p>
+<h2>Emphasized text</h2>
+<p><strong>strong emphasis</strong> or <strong>strong emphasis</strong> (e.g., boldface)</p>
+<pre><code class="lang-md">**strong emphasis** or __strong emphasis__ (e.g., boldface)</code></pre>
+<h2>Code</h2>
+<p>To include code (formatted in monospace font), you can either surround inline code with backticks (`), like in:</p>
+<p>Some text with <code>some code</code> inside.</p>
+<pre><code class="lang-md">Some text with `some code` inside.</code></pre>
+<p>Or indent several lines of code by at least four spaces, as in:</p>
+<pre><code>line 1 of code
+line 2 of code
+line 3 of code</code></pre>
+<pre><code class="lang-md">    line 1 of code
+    line 2 of code
+    line 3 of code</code></pre>
+<p>The latter option makes Markdown retain all whitespace—as opposed to the usual behaviour, which, by removing line breaks and excess spaces, would break indentation and code layout.</p>
+<h2>Escaping</h2>
+<p>Use <code>\</code> for escaping code, such as handlebars templates, so the following:</p>
+<pre><code class="lang-md">{{ page.title }}</code></pre>
+<p>would translate literally.</p>
+<h2>Line breaks</h2>
+<p>When you do want to insert a break tag using Markdown, you end a line with two or more spaces, then type return. For example:</p>
+<pre><code class="lang-md">def show_results
+tag_br space space
+end</code></pre>
+<p>Result:</p>
+<pre><code class="lang-html">def show_results
+
+end</code></pre>
+<p>You can also use two newlines. For example:</p>
+<pre><code>sentence A
+
+sentence B</code></pre>
+<p>Result:</p>
+<pre><code class="lang-html">sentence A
+sentence B</code></pre>
+<h2>Blockquotes</h2>
+<blockquote>
+<p>&quot;This entire paragraph of text will be enclosed in an HTML blockquote element.
+Blockquote elements are reflowable. You may arbitrarily
+wrap the text to your liking, and it will all be parsed
+into a single blockquote element.&quot;</p>
+</blockquote>
+<pre><code class="lang-md">&gt; &quot;This entire paragraph of text will be enclosed in an HTML blockquote element.
+Blockquote elements are reflowable. You may arbitrarily
+wrap the text to your liking, and it will all be parsed
+into a single blockquote element.&quot;</code></pre>
+<p>The above would translate into the following HTML:</p>
+<pre><code class="lang-html">&lt;blockquote&gt;&lt;p&gt;This entire paragraph of text will be enclosed in an HTML blockquote element. Blockquote
+elements are reflowable. You may arbitrarily wrap the text to your liking, and it will all
+be parsed into a single blockquote element.&lt;/p&gt;&lt;/blockquote&gt;</code></pre>
+<h2>External links</h2>
+<p>Links may be included inline:</p>
+<pre><code class="lang-md">[link text here](link.address.here)
+Ex. [Markdown](http://en.wikipedia.com/wiki/Markdown)</code></pre>
+<p>Alternatively, links can be placed in footnotes outside of the paragraph, being referenced with some sort of reference tag. For example, including the following inline:</p>
+<pre><code class="lang-md">[link text here][linkref]</code></pre>
+<p>would produce a link if the following showed up outside of the paragraph (or at the end of the document):</p>
+<pre><code class="lang-md">
+[linkref]: link.address.here &quot;link title here&quot;</code></pre>
+<h2>Images</h2>
+<p>Images have similar syntax to links with a preceding exclamation point.</p>
+<pre><code class="lang-md">![Alt text](/path/to/img.jpg)</code></pre>
+<p>or</p>
+<pre><code class="lang-md">![Alt text](/path/to/img.jpg &quot;Optional title&quot;)</code></pre>
+<p>Like links, Images also have a footnote style syntax</p>
+<pre><code class="lang-md">![Alt text][id]</code></pre>
+<p>with a reference later in the document defining the url location</p>
+<pre><code class="lang-md">
+[id]: url/to/image  &quot;Optional title attribute&quot;</code></pre>
+<h2>Horizontal rules</h2>
+<p>Horizontal rules are created by placing three or more hyphens, asterisks, or underscores on a line by themselves. You may use spaces between the hyphens or asterisks. Each of the following lines will produce a horizontal rule:</p>
+<pre><code class="lang-md">* * *
+***
+*****
+- - -
+---------------------------------------</code></pre>
+<h2>More</h2>
+<p>Here is a markdown link to <a href="http://assemble.io">Assemble</a>, and a literal <a href="http://assemble.io/">http://assemble.io/</a>. </p>
+<p>Now some inline markup like <em>italics</em>,  <strong>bold</strong>, and <code>code()</code>. </p>
+<p><img src="/images/photo.jpg" alt="picture alt" title="Title is optional"></p>
+<blockquote>
+<p>Blockquotes are like quoted text in email replies</p>
+<blockquote>
+<p>And, they can be nested</p>
+</blockquote>
+</blockquote>
+<h4>Lists</h4>
+<ul>
+<li>Bullet lists are easy too</li>
+</ul>
+<ul>
+<li>Another one</li>
+</ul>
+<ul>
+<li>Another one</li>
+</ul>
+<ol>
+<li>A numbered list</li>
+<li>Which is numbered</li>
+<li>With periods and a space</li>
+</ol>
+<h4>Code</h4>
+<p>And now some code:</p>
+<pre><code>// Code is just text indented a bit
+which(is_easy) to_remember();</code></pre>
+<pre><code class="lang-js">// GFM also allows un-indented code blocks
+
+if (this_is_more_code == true &amp;&amp; !indented) {
+    // code blocks, &quot;fenced&quot; with backticks, also not indented
+}</code></pre>
+<h4>Text</h4>
+<p>Text with
+two trailing spaces
+(on the right)
+can be used
+for things like poems</p>
+<h4>Horizontal rules</h4>
+<hr>
+<h2><em>**</em></h2>
+<h4>HTML elements</h4>
+<p>&lt;div class=&quot;alert alert-warning&quot;&gt; This is a div wrapping some <strong>markdown</strong>.&lt;/div&gt;
+
+</p>
+<p>&lt;div class=&quot;custom-class&quot; markdown=&quot;1&quot;&gt;
+This is a div wrapping some <strong>markdown</strong>.
+&lt;/div&gt;
+
+
+</p>
+<h4>Tables</h4>
+<table>
+<thead>
+<tr>
+<th>Heading 1</th>
+<th>Heading 2</th>
+<th>Heading 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+<tr>
+<td><strong>Lorem ipsum</strong></td>
+<td><code>lorem ipsum</code></td>
+<td>lorem ipsum</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Outer pipes on tables are optional</li>
+<li>Colon used for alignment (right versus left)</li>
+</ul>
+<p>*[ABBR]: Markdown plus abbreviations (produces an &lt;abbr&gt; tag)</p>
+
+    </div>
+  </body>
+</html>
