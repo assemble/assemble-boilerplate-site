@@ -1,19 +1,19 @@
-# First-level heading
+### Markdown Headings
 
-## Second-level Heading
-
-### Third-level Heading
-
-#### Fourth-level heading
+# h1 Heading
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
 
 ``` md
-# First-level heading
-
-## Second-level Heading
-
-### Third-level Heading
-
-#### Fourth-level heading
+# h1 Heading
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
 ```
 
 
@@ -33,6 +33,16 @@ two sentences.
 ```
 
 ## Lists
+
+
+* Bullet lists are easy too
+- Another one
++ Another one
+
+1. A numbered list
+2. Which is numbered
+3. With periods and a space
+
 
 * An item in a bulleted (unordered) list
     * A subitem, indented with 4 spaces
@@ -57,11 +67,10 @@ Line breaks inserted in the text are removed from the final result: the web brow
 
 
 ## Emphasized text
-
-**strong emphasis** or __strong emphasis__ (e.g., boldface)
+_italics_,  **bold**, and `code()`. 
 
 ``` md
-**strong emphasis** or __strong emphasis__ (e.g., boldface)
+_italics_,  **bold**, and `code()`. 
 ```
 
 ## Code
@@ -76,15 +85,30 @@ Some text with `some code` inside.
 
 Or indent several lines of code by at least four spaces, as in:
 
+    // Some comments
     line 1 of code
     line 2 of code
     line 3 of code
 
+Or wrap the code with backtick "fences" before and after the code: ` ``` `
+
 ``` md
-    line 1 of code
-    line 2 of code
-    line 3 of code
+line 1 of code
+line 2 of code
+line 3 of code
 ```
+GFM, or "GitHub Flavored Markdown" also supports syntax highlighting. To activate it, simply add the file extension of the language you want to use directly after the first "fence": ` ``` js ` 
+
+``` js
+assemble: {
+  // Files to build into pages
+  pages: {
+    src:  'templates/pages/*.hbs',
+    dest: 'dist/'
+  }
+}
+```
+
 
 The latter option makes Markdown retain all whitespace—as opposed to the usual behaviour, which, by removing line breaks and excess spaces, would break indentation and code layout.
 
@@ -142,6 +166,12 @@ wrap the text to your liking, and it will all be parsed
 into a single blockquote element."
 ```
 
+
+> Blockquotes are like quoted text in email replies
+>> And, they can be nested
+
+
+
 The above would translate into the following HTML:
 
 ``` html
@@ -152,11 +182,16 @@ be parsed into a single blockquote element.</p></blockquote>
 
 ## External links
 
-Links may be included inline:
+Links may be included inline. Here is a markdown link to [Assemble](https://github.com/assemble/assemble), and a literal <https://github.com/assemble/assemble/>. 
+
 
 ``` md
 [link text here](link.address.here)
 Ex. [Markdown](http://en.wikipedia.com/wiki/Markdown)
+```
+Literal links
+``` md
+<https://github.com/assemble/assemble/>
 ```
 
 Alternatively, links can be placed in footnotes outside of the paragraph, being referenced with some sort of reference tag. For example, including the following inline:
@@ -173,28 +208,31 @@ would produce a link if the following showed up outside of the paragraph (or at 
 ```
 
 ## Images
-
-Images have similar syntax to links with a preceding exclamation point.
+Images have similar syntax to links, except the square brackets are preceded by an exclamation point.
 
 ``` md
-![Alt text](/path/to/img.jpg)
+![Alt text](http://octodex.github.com/images/minion.png)
 ```
+![Alt text](http://octodex.github.com/images/minion.png)
 
 or
 ``` md
-![Alt text](/path/to/img.jpg "Optional title")
+![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 ```
+![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
 Like links, Images also have a footnote style syntax
 
 ``` md
 ![Alt text][id]
 ```
-with a reference later in the document defining the url location
+![Alt text][id]
+
+With a reference later in the document defining the URL location:
 
 ``` md
 
-[id]: url/to/image  "Optional title attribute"
+[id]: http://octodex.github.com/images/dojocat.jpg  "The Dojocat"
 ```
 
 
@@ -209,72 +247,12 @@ Horizontal rules are created by placing three or more hyphens, asterisks, or und
 ---------------------------------------
 ```
 
-
-## More
-
-Here is a markdown link to [Assemble](http://assemble.io), and a literal <http://assemble.io/>. 
-
-Now some inline markup like _italics_,  **bold**, and `code()`. 
-
-
-![picture alt](/images/photo.jpg "Title is optional")
-
-> Blockquotes are like quoted text in email replies
->> And, they can be nested
-
-
-#### Lists
-
-* Bullet lists are easy too
-- Another one
-+ Another one
-
-1. A numbered list
-2. Which is numbered
-3. With periods and a space
-
-
-#### Code
-
-And now some code:
-
-    // Code is just text indented a bit
-    which(is_easy) to_remember();
-
-``` js
-// GFM also allows un-indented code blocks
-
-if (this_is_more_code == true && !indented) {
-    // code blocks, "fenced" with backticks, also not indented
-}
-```
-
-#### Text
-
-Text with
-two trailing spaces
-(on the right)
-can be used
-for things like poems
-
-
-#### Horizontal rules
-
 * * * *
 ****
 --------------------------
 
 
-#### HTML elements
-
-<div class="alert alert-warning"> This is a div wrapping some **markdown**.</div>
-
-<div class="custom-class" markdown="1">
-This is a div wrapping some **markdown**.
-</div>
-
-
-#### Tables
+## Tables
 
 | Heading 1          | Heading 2          | Heading 3          |
 | ------------------ | ------------------ | ------------------ |
@@ -287,9 +265,19 @@ This is a div wrapping some **markdown**.
 | **Lorem ipsum**    | `lorem ipsum`      | lorem ipsum        |
 
 
-* Outer pipes on tables are optional
-* Colon used for alignment (right versus left)
+* A colon can be used to right align text within a column: `| -------: |`
 
 
-*[ABBR]: Markdown plus abbreviations (produces an <abbr> tag)
+
+
+## HTML elements
+
+<div class="alert alert-warning"> This is a div wrapping some **markdown**.</div>
+
+<div class="custom-class" markdown="1">
+This is a div wrapping some **markdown**.
+</div>
+
+
+
 

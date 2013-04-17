@@ -1,5 +1,8 @@
 ---
 title: Inline Markdown Example
+description: > 
+  You're looking at inline markdown content, wrapped with handlebars (mustache) tags!
+layout: src/templates/layouts/default.hbs
 ---
 <div class="page-header">
   <h1>{{ title }}</h1>
@@ -11,7 +14,7 @@ title: Inline Markdown Example
 
 {{#markdown}}
 
-You're looking at inline markdown content, wrapped with handlebars (mustache) tags!
+{{description}}
 
 Behold... some examples:
 

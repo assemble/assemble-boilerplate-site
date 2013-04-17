@@ -12,33 +12,43 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+
     // Get metadata to use in templates.
     pkg: grunt.file.readJSON('package.json'),
 
-    // The assemble 'task'
+
     assemble: {
-      // Task-level options.
       options: {
         flatten: true,
-        assets: 'dist/assets',
+        assets: '.',
         layout: 'src/templates/layouts/default.hbs',
-        partials: ['src/templates/partials/*.hbs'],
-        ext: '.html'
+        partials: ['src/templates/partials/*.hbs']
       },
+      // Files to build into pages
       pages: {
         files: {
-          'dist/': ['src/templates/pages/*.hbs']
+          './dest/': ['src/templates/pages/*.hbs', '!src/templates/pages/index.hbs']
+          // './': ['src/templates/pages/index.hbs']
+        }        
+      },
+      // Split index into different target for example
+      home: {
+        options: {
+          layout: 'src/templates/layouts/home.hbs'
+        },
+        files: {
+          './': ['src/templates/pages/index.hbs']
         }
       }
     },
 
-    // Remove HTML files from ./dist before rebuilding.
+
+    // Clean out ./dist before rebuilding.
     clean: {
       dest: {
-        src: ['dist/**/*.html']
+        src: ['dest/**/*.html']
       }
     }
-
   });
 
   // Load npm plugins to provide necessary tasks.

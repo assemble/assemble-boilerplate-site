@@ -1,0 +1,25 @@
+---
+assemble: http://github.com/assemble/
+links: ['./index', 'dest/context', 'dest/basic', 'dest/markdown']
+stylesheets: ['bootstrap', 'prettify']
+scripts: prettify
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    {{#each stylesheets}}<link rel="stylesheet" href="dest/{{{.}}}.css">
+    {{/each}}
+  </head>
+  <body>
+    <!-- nav partial -->
+    {{> nav }}
+
+    <div class="container">
+      <!-- pages -->
+      {{> body }}
+
+      <script src="prettify.js"></script>
+    </div>
+  </body>
+</html>
