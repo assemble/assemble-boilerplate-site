@@ -1,22 +1,25 @@
 # assemble-examples-basic
 
-> [Assemble][assemble] is a Grunt plugin that makes it dead simple to build modular sites, blogs, components or docs from reusable **templates** and **data**.
+> [Assemble][assemble] is a Grunt plugin that makes it dead simple to build modular sites and components from reusable **templates** and **data**.
 
 
-This example demonstrates using Assemble to build a simple using:
-* A layouts
+This example shows how to construct a simple site with:
+
+* Layouts
 * Pages
 * Partials
-* YAML Front-Matter
+* YAML Front-matter
 * Markdown content
 
 
 ## Getting Started
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile][gruntfile], as well as install and use Grunt plugins. 
 
-* **[Download the project][download]** and unzip it into a new folder.
+* **[Download the project][download]** and unzip it into a new folder.  
 * In the project folder, run `npm install` to install [Assemble][assemble], [Grunt](http://gruntjs.com/) and any other dependencies.
 * Once the dependencies are installed you may run `grunt assemble` to build the example project.
+
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile][gruntfile], as well as install and use Grunt plugins. 
+
 
 
 ## The "assemble" task
@@ -45,15 +48,14 @@ grunt.initConfig({
 })
 ```
 
-## Options
+### Options
 This section describes the options used in the example. If are not yet familiar with Grunt.js, you might be able to "get by" on this documentation alone since Assemble is simple to run, but please consider visiting the Grunt documentation to learn more about [configuring tasks][configuring-tasks] and all of the things you can do. 
 
 #### `flatten`
 Type: `Boolean`
 Default: `false`
 
-This is useful for ensuring that pages are "flattened" into the same destination dir when they are are generated from different source folders. See [building the files object dynamically][files-object] for more information on files formats.
-
+Remove anything after (and including) the first "." in the destination path, then append this value. In other words, when they are are generated from different source folders this "flattens" them into the same destination directory. See [building the files object dynamically][files-object] for more information on files formats.
 
 #### `layout`
 Type: `String` (optional)
@@ -70,53 +72,102 @@ Default: `undefined`
 Specifies the Handlebars partials files, or paths to the directories of files to be used. 
 
 
-#### `assets`
+#### assets
+Type: `String` (optional)
+Default: `undefined`
+
+Used with the `\{{assets}}` variable to resolve the relative path from the _dest file_ to the _assets_ folder.
+
+
+#### partials
 Type: `String`
 Default value: `'.'`
 
 A string value that is used to do something else with whatever else.
 
-
-#### `partials`
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
-
- patterns to define 
 Also note that globbing (see [minimatch](https://github.com/isaacs/minimatch)) and Lodash (underscore) templates can be use with every option.
+
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
 ```js
-grunt.initConfig({
-  bootstrap: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+assemble: {
+  // "global" task-level options
+  options: {
+    flatten: true
+    data: 'src/data/global/**/*.{yml,json}' // "global" data
   },
-})
-```
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  bootstrap: {
+  docs: {
+    // target-level options
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      assets: 'dist/docs/assets',
+      layout: 'templates/layouts/docs-layout.hbs'
+      partials: [
+        'templates/docs/partials/*.hbs',
+        'templates/docs/snippets/*.hbs'
+      ],
+      data: 'src/data/docs/**/*.{yml,json}',
+      ext: '.html'
+    },
+    'docs/': [
+      'templates/docs/pages/**/*.md.hbs',
+      'templates/docs/pages/**/*.hbs'
+    ]
+  },
+
+  components: {
+    options: {
+      assets: 'dist/docs/assets',
+      layout: 'templates/layouts/component-layout.hbs'
+      partials: [
+        'templates/docs/partials/*.hbs',
+        'templates/docs/snippets/*.hbs'
+      ],
+      data: 'src/data/**/*.{yml,json}'
     },
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+      // Here we build "partials" and "snippets" into pages
+      // but we still specify these in options.partials since
+      // some partials "pull in" other partials. 
+      'docs/components/': [
+        'templates/partials/**/*.hbs', 
+        'templates/snippets/**/*.hbs'
+      ]
+    }
   },
-})
+
+  blog: {
+    options: {
+      assets: 'dist/blog/assets',
+      layout: 'templates/layouts/blog-layout.hbs'
+      partials: [
+        'templates/blog/posts/*.md', // posts as partials
+        'templates/blog/partials/*.hbs',
+        'templates/blog/snippets/*.hbs'
+      ],
+      data: 'src/data/blog/**/*.{yml,json}'
+    },
+    src:  ['templates/blog/pages/**/*.md.hbs'], // markdown "templates"
+    dest: 'dist/'
+  },
+
+  readme: {
+    options: {
+      data: 'path/to/readme.yml'
+    },
+    './': ['path/to/readme.md.hbs']
+  },
+
+  glob_to_multiple: {
+    expand: true,
+    flatten: true,
+    cwd: 'path/to/templates',
+    src: ['**/*.hbs'],
+    dest: 'path/to/dest/',
+    ext: '.md'
+  }
+}
 ```
 
 ## Contributing
