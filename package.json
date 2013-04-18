@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "assemble": "~0.3.4",
+    "assemble": "latest",
     "grunt-contrib-clean": "~0.4.0"
   },
   "keywords": [

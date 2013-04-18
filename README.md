@@ -3,7 +3,7 @@
 > [Assemble][assemble] is a Grunt plugin that makes it dead simple to build modular sites and components from reusable **templates** and **data**.
 
 
-This example shows how to construct a simple site with:
+The example shows how to construct a very basic site using:
 
 * Layouts
 * Pages
@@ -14,7 +14,7 @@ This example shows how to construct a simple site with:
 
 ## Getting Started
 
-* **[Download the project][download]** and unzip it into a new folder.  
+* **[Download this project][download]** and unzip it into a new folder.  
 * In the project folder, run `npm install` to install [Assemble][assemble], [Grunt](http://gruntjs.com/) and any other dependencies.
 * Once the dependencies are installed you may run `grunt assemble` to build the example project.
 
@@ -49,13 +49,14 @@ grunt.initConfig({
 ```
 
 ### Options
-This section describes the options used in the example. If are not yet familiar with Grunt.js, you might be able to "get by" on this documentation alone since Assemble is simple to run, but please consider visiting the Grunt documentation to learn more about [configuring tasks][configuring-tasks] and all of the things you can do. 
+Visit [Assemble's documentation][wiki] to learn about the available task and target options as well as how to configure them. Also, if are not yet familiar with Grunt.js, please consider visiting the Grunt documentation to learn more about [configuring tasks][configuring-tasks]. 
 
 #### `flatten`
 Type: `Boolean`
 Default: `false`
 
 Remove anything after (and including) the first "." in the destination path, then append this value. In other words, when they are are generated from different source folders this "flattens" them into the same destination directory. See [building the files object dynamically][files-object] for more information on files formats.
+
 
 #### `layout`
 Type: `String` (optional)
@@ -64,7 +65,7 @@ Default: `undefined`
 If set, this defines the layout file to use for that [target][tasks-and-targets]. Unlike Jekyll, Assemble requires a file extension since you are not limited to using a single file type.
 
 
-#### partials
+#### `partials`
 Type: `Object` (optional)
 Parameters: `Object|Array`
 Default: `undefined`
@@ -72,14 +73,14 @@ Default: `undefined`
 Specifies the Handlebars partials files, or paths to the directories of files to be used. 
 
 
-#### assets
+#### `assets`
 Type: `String` (optional)
 Default: `undefined`
 
 Used with the `\{{assets}}` variable to resolve the relative path from the _dest file_ to the _assets_ folder.
 
 
-#### partials
+#### `partials`
 Type: `String`
 Default value: `'.'`
 
@@ -181,6 +182,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 <!-- assemble links -->
 
 [assemble]: https://github.com/assemble/assemble/
+[wiki]: https://github.com/assemble/assemble/wiki
 [download]: https://github.com/assemble/assemble-examples-basic/archive/master.zip
 
 

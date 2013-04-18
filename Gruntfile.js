@@ -10,40 +10,57 @@
 
 module.exports = function(grunt) {
 
+  // Get metadata to use in templates.
+  var pkg = grunt.file.readJSON('package.json');
+
   // Project configuration.
   grunt.initConfig({
-
-    // Get metadata to use in templates.
-    pkg: grunt.file.readJSON('package.json'),
-
+    pkg: pkg,
 
     assemble: {
       options: {
         flatten: true,
-        assets: '.',
+        assets: 'dest/assets',
         layout: 'src/templates/layouts/default.hbs',
         partials: ['src/templates/partials/*.hbs']
       },
-      // Files to build into pages
+
       pages: {
         files: {
-          './dest/': ['src/templates/pages/*.hbs', '!src/templates/pages/index.hbs']
-          // './': ['src/templates/pages/index.hbs']
-        }        
-      },
-      // Split index into different target for example
-      home: {
-        options: {
-          layout: 'src/templates/layouts/home.hbs'
-        },
-        files: {
+          'dest/': ['src/templates/pages/*.hbs', '!src/templates/pages/index.hbs'],
           './': ['src/templates/pages/index.hbs']
-        }
+        }        
       }
+      // compact: {
+      //   options: {
+      //     partials: 'test/files/partials/*.hbs',
+      //     layout: 'test/files/layout.hbs'
+      //   },
+      //   src:  ['test/files/dates.hbs', 'test/files/page.hbs'],
+      //   dest: 'test/actual/'
+      // },
+      // files_object: {
+      //   options: {
+      //     layout: 'test/files/layout.hbs',
+      //     data: 'test/yaml/data/**/*.*'
+      //   },
+      //   files: {
+      //     'test/actual/yaml/': ['test/yaml/*.hbs']
+      //   }
+      // },
+      // multi: {
+      //   options: {
+      //     layout: 'test/files/layout.hbs'
+      //   },
+      //   files: {
+      //     'test/actual/multi/dest1/': ['test/files/**/*.hbs', '!test/files/layout*.*'],
+      //     'test/actual/multi/dest2/': ['test/files/**/*.md'],
+      //     'test/actual/multi/dest2/sub-dest/': ['test/files/**/*.hbs', '!test/files/layout*.*']
+      //   }
+      // }
     },
 
-
-    // Clean out ./dist before rebuilding.
+    // Clean before rebuilding.
     clean: {
       dest: {
         src: ['dest/**/*.html']

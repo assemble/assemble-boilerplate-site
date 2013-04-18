@@ -1,14 +1,14 @@
 ---
-assemble: http://github.com/assemble/
-links: ['../index', './context', './basic', './markdown']
-stylesheets: ['bootstrap', 'prettify']
+repo: http://github.com/assemble/
+links: [../index, ./context, ./basic, ./markdown]
+stylesheets: [bootstrap, prettify]
 scripts: prettify
 ---
 <!DOCTYPE html>
 <html>
   <head>
     <title>{{ title }}</title>
-    {{#each stylesheets}}<link rel="stylesheet" href="{{{.}}}.css">
+    {{#each stylesheets}}<link rel="stylesheet" href="{{../assets}}/{{{.}}}.css">
     {{/each}}
   </head>
   <body>
@@ -19,7 +19,7 @@ scripts: prettify
       <!-- pages -->
       {{> body }}
 
-      <script src="prettify.js"></script>
+      <script src="{{assets}}/prettify.js"></script>
     </div>
   </body>
 </html>
