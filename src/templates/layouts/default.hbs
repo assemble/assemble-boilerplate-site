@@ -1,15 +1,16 @@
 ---
 repo: http://github.com/assemble/
-links: [../index, ./context, ./basic, ./markdown]
-stylesheets: [bootstrap, prettify]
-scripts: prettify
+links:
+  - ../index
+  - ./context
+  - ./basic
+  - ./markdown
 ---
 <!DOCTYPE html>
 <html>
   <head>
     <title>{{ title }}</title>
-    {{#each stylesheets}}<link rel="stylesheet" href="{{../assets}}/{{{.}}}.css">
-    {{/each}}
+    <link rel="stylesheet" href="{{assets}}/bootstrap.css">
   </head>
   <body>
     <!-- nav partial -->

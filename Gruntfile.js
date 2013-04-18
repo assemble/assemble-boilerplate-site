@@ -20,7 +20,7 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         flatten: true,
-        assets: 'dest/assets',
+        assets: './dest/assets/',
         layout: 'src/templates/layouts/default.hbs',
         partials: ['src/templates/partials/*.hbs']
       },
@@ -29,25 +29,6 @@ module.exports = function(grunt) {
           'dest/': ['src/templates/pages/*.hbs', '!src/templates/pages/index.hbs'],
           './': ['src/templates/pages/index.hbs']
         }        
-      },
-      files_object: {
-        options: {
-          layout: 'test/files/layout.hbs',
-          data: 'test/yaml/data/**/*.*'
-        },
-        files: {
-          'test/actual/yaml/': ['test/yaml/*.hbs']
-        }
-      },
-      multi: {
-        options: {
-          layout: 'test/files/layout.hbs'
-        },
-        files: {
-          'test/actual/multi/dest1/': ['test/files/**/*.hbs', '!test/files/layout*.*'],
-          'test/actual/multi/dest2/': ['test/files/**/*.md'],
-          'test/actual/multi/dest2/sub-dest/': ['test/files/**/*.hbs', '!test/files/layout*.*']
-        }
       }
     },
 
