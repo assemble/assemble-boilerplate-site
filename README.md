@@ -64,6 +64,7 @@ Default: `undefined`
 
 If set, this defines the layout file to use for that [target][tasks-and-targets]. Unlike Jekyll, Assemble requires a file extension since you are not limited to using a single file type.
 
+Learn more: [options.layouts][layouts]
 
 #### `partials`
 Type: `Object|Array` (optional)
@@ -71,6 +72,7 @@ Default: `undefined`
 
 Specifies the Handlebars [partials][] files, or paths to the directories of files to be used. 
 
+Learn more: [options.partials][partials]
 
 #### `assets`
 Type: `String` (optional)
@@ -85,10 +87,11 @@ Default: `src/data`
 
 Retrieves data from any specified `JSON` and/or `YAML` files to populate the templates when rendered. Data gets passed through the `data` object to the options on the assemble task, then to the context in your templates. 
 
+Learn more: [data][data]
 
 ### Usage Examples 
 
-Here are some examples of how you can customize the Assemble task for different use cases. Visit the [assemble-examples](https://github.com/assemble/assemble-examples) repo to see more example projects.
+Here are some examples of how you can customize the Assemble task for different use cases. Visit the [assemble-examples][] repo to see more example projects.
 
 ```js
 assemble: {
@@ -180,10 +183,14 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 <!-- assemble links -->
 
-[assemble]: https://github.com/assemble/assemble/
-[wiki]: https://github.com/assemble/assemble/wiki
-[partials]: https://github.com/assemble/assemble/wiki/partials
 [download]: https://github.com/assemble/assemble-examples-basic/archive/master.zip
+[assemble]: https://github.com/assemble/assemble/
+[assemble-examples]: https://github.com/assemble/assemble-examples
+
+[wiki]: https://github.com/assemble/assemble/wiki
+[layouts]: https://github.com/assemble/assemble/wiki/layouts
+[partials]: https://github.com/assemble/assemble/wiki/partials
+[data]: https://github.com/assemble/assemble/wiki/data
 
 
 <!-- grunt links -->
