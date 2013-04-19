@@ -182,7 +182,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 [assemble]: https://github.com/assemble/assemble/
 [wiki]: https://github.com/assemble/assemble/wiki
-[wiki]: https://github.com/assemble/assemble/wiki/partials
+[partials]: https://github.com/assemble/assemble/wiki/partials
 [download]: https://github.com/assemble/assemble-examples-basic/archive/master.zip
 
 
