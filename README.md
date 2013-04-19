@@ -76,7 +76,7 @@ Specifies the Handlebars [partials][] files, or paths to the directories of file
 Type: `String` (optional)
 Default: `undefined`
 
-Used with the `\{{assets}}` variable to resolve the relative path from the _dest file_ to the _assets_ folder.
+Used with the `{{assets}}` variable to resolve the relative path from the _dest file_ to the _assets_ folder.
 
 
 #### `data`
