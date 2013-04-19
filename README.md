@@ -52,7 +52,7 @@ grunt.initConfig({
 Visit [Assemble's documentation][wiki] to learn about the available task and target options as well as how to configure them. Also, if are not yet familiar with Grunt.js, please consider visiting the Grunt documentation to learn more about [configuring tasks][configuring-tasks]. 
 
 #### `flatten`
-Type: `Boolean`
+Type: `Boolean` (optional)
 Default: `false`
 
 Remove anything after (and including) the first "." in the destination path, then append this value. In other words, when they are are generated from different source folders this "flattens" them into the same destination directory. See [building the files object dynamically][files-object] for more information on files formats.
@@ -66,11 +66,10 @@ If set, this defines the layout file to use for that [target][tasks-and-targets]
 
 
 #### `partials`
-Type: `Object` (optional)
-Parameters: `Object|Array`
-Default: `undefined`
+Type: `Object|Array` (optional)
+Default: `undefined` 
 
-Specifies the Handlebars partials files, or paths to the directories of files to be used. 
+Specifies the Handlebars [partials][] files, or paths to the directories of files to be used. 
 
 
 #### `assets`
@@ -79,6 +78,12 @@ Default: `undefined`
 
 Used with the `\{{assets}}` variable to resolve the relative path from the _dest file_ to the _assets_ folder.
 
+
+#### `data`
+Type: `Object|Array` (optional)
+Default: `src/data`
+
+Retrieves data from any specified `JSON` and/or `YAML` files to populate the templates when rendered. Data gets passed through the `data` object to the options on the assemble task, then to the context in your templates. 
 
 
 ### Usage Examples 
@@ -177,6 +182,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 [assemble]: https://github.com/assemble/assemble/
 [wiki]: https://github.com/assemble/assemble/wiki
+[wiki]: https://github.com/assemble/assemble/wiki/partials
 [download]: https://github.com/assemble/assemble-examples-basic/archive/master.zip
 
 
