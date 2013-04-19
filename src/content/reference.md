@@ -1,64 +1,3 @@
-### Markdown Headings
-
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
-
-``` md
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
-```
-
-
-## Paragraphs
-
-This is a paragraph. It has two sentences.
-
-This is another paragraph. It also has
-two sentences.
-
-
-``` md
-This is a paragraph. It has two sentences.
-
-This is another paragraph. It also has
-two sentences.
-```
-
-## Lists
-
-
-* Bullet lists are easy too
-- Another one
-+ Another one
-
-1. A numbered list
-2. Which is numbered
-3. With periods and a space
-
-
-* An item in a bulleted (unordered) list
-    * A subitem, indented with 4 spaces
-* Another item in a bulleted list
-1. An item in an enumerated (ordered) list
-   1.1. A subitem, indented with 4 spaces
-2. Another item in an enumerated list
-
-``` md
-* An item in a bulleted (unordered) list
-    * A subitem, indented with 4 spaces
-* Another item in a bulleted list
-1. An item in an enumerated (ordered) list
-   1.1. A subitem, indented with 4 spaces
-2. Another item in an enumerated list
-```
 
 
 ## Line return
@@ -73,41 +12,6 @@ _italics_,  **bold**, and `code()`.
 _italics_,  **bold**, and `code()`. 
 ```
 
-## Code
-
-To include code (formatted in monospace font), you can either surround inline code with backticks (`), like in:
-
-Some text with `some code` inside.
-
-``` md
-Some text with `some code` inside.
-```
-
-Or indent several lines of code by at least four spaces, as in:
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-Or wrap the code with backtick "fences" before and after the code: ` ``` `
-
-``` md
-line 1 of code
-line 2 of code
-line 3 of code
-```
-GFM, or "GitHub Flavored Markdown" also supports syntax highlighting. To activate it, simply add the file extension of the language you want to use directly after the first "fence": ` ``` js ` 
-
-``` js
-assemble: {
-  // Files to build into pages
-  pages: {
-    src:  'templates/pages/*.hbs',
-    dest: 'dist/'
-  }
-}
-```
 
 
 The latter option makes Markdown retain all whitespace—as opposed to the usual behaviour, which, by removing line breaks and excess spaces, would break indentation and code layout.
@@ -266,18 +170,3 @@ Horizontal rules are created by placing three or more hyphens, asterisks, or und
 
 
 * A colon can be used to right align text within a column: `| -------: |`
-
-
-
-
-## HTML elements
-
-<div class="alert alert-warning"> This is a div wrapping some **markdown**.</div>
-
-<div class="custom-class" markdown="1">
-This is a div wrapping some **markdown**.
-</div>
-
-
-
-

@@ -1,11 +1,11 @@
-## Markdown images
+## Images
 
-Images have similar syntax to links with a preceding exclamation point.
+Images have a similar syntax to links but include a preceding exclamation point.
 
 ``` md
-![Alt text](http://octodex.github.com/images/minion.png)
+![Minion](http://octodex.github.com/images/minion.png)
 ```
-![Alt text](http://octodex.github.com/images/minion.png)
+![Minion](http://octodex.github.com/images/minion.png)
 
 or
 ``` md

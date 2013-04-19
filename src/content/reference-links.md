@@ -1,4 +1,4 @@
-### Markdown Reference Links
+### Reference Links
 
 Assemble [gets the rocks out of your socks][get], to make you faster at building and maintaining web [components][comp].
 

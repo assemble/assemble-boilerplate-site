@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,14 +9,21 @@
     <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
+      <a class="navbar-brand" href="index.html">Assemble</a>
       <ul class="nav">
-        <li><a href="../index.html">Index</a></li>
-        <li><a href="./context.html">Context</a></li>
-        <li><a href="./basic.html">Basic</a></li>
-        <li><a href="./markdown.html">Markdown</a></li>
-        
+        <li class="active">
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="dest/partials.html">Partials</a>
+        </li>
+        <li>
+          <a href="dest/markdown.html">Markdown</a>
+        </li>
+        <li>
+          <a href="dest/basic.html">Basic</a>
+        </li>
       </ul>
-      <ul class="nav pull-right"><li><a href="">Visit Assemble</a></li></ul>
     </div>
   </div>
 </div>
@@ -28,7 +34,6 @@
       
 <div class="page-header">
   <h1>Home</h1>
-  <p class="lead">Welcome to our Site!</p>
 </div>
 
 <p>In this example, at the top of each page you can use 
@@ -36,78 +41,22 @@
 </p>
 
 
-<h3>Markdown Headings</h3>
-<h1>h1 Heading</h1>
-<h2>h2 Heading</h2>
-<h3>h3 Heading</h3>
-<h4>h4 Heading</h4>
-<h5>h5 Heading</h5>
-<h6>h6 Heading</h6>
-<pre><code class="lang-md"># h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading</code></pre>
-<h2>Paragraphs</h2>
-<p>This is a paragraph. It has two sentences.</p>
-<p>This is another paragraph. It also has
-two sentences.</p>
-<pre><code class="lang-md">This is a paragraph. It has two sentences.
-
-This is another paragraph. It also has
-two sentences.</code></pre>
-<h2>Lists</h2>
-<ul>
-<li>Bullet lists are easy too</li>
-</ul>
-<ul>
-<li>Another one</li>
-</ul>
-<ul>
-<li>Another one</li>
-</ul>
-<ol>
-<li>A numbered list</li>
-<li>Which is numbered</li>
-<li>With periods and a space</li>
-</ol>
-<ul>
-<li>An item in a bulleted (unordered) list<ul>
-<li>A subitem, indented with 4 spaces</li>
-</ul>
-</li>
-<li>Another item in a bulleted list</li>
-</ul>
-<ol>
-<li>An item in an enumerated (ordered) list
-1.1. A subitem, indented with 4 spaces</li>
-<li>Another item in an enumerated list</li>
-</ol>
-<pre><code class="lang-md">* An item in a bulleted (unordered) list
-    * A subitem, indented with 4 spaces
-* Another item in a bulleted list
-1. An item in an enumerated (ordered) list
-   1.1. A subitem, indented with 4 spaces
-2. Another item in an enumerated list</code></pre>
-<h2>Line return</h2>
-<p>Line breaks inserted in the text are removed from the final result: the web browser is in charge of breaking lines depending on the available space. To force a line break, insert two spaces at the end of the line.</p>
-<h2>Emphasized text</h2>
-<p><em>italics</em>,  <strong>bold</strong>, and <code>code()</code>. </p>
-<pre><code class="lang-md">_italics_,  **bold**, and `code()`.</code></pre>
 <h2>Code</h2>
-<p>To include code (formatted in monospace font), you can either surround inline code with backticks (`), like in:</p>
-<p>Some text with <code>some code</code> inside.</p>
-<pre><code class="lang-md">Some text with `some code` inside.</code></pre>
+<h4>Inline code</h4>
+<p>To include code (formatted in monospace font), you can either surround inline code with a single backtick (<code>` </code>): <code>some code</code></p>
+<pre><code class="lang-md">`some code`</code></pre>
+<h4>Indented code</h4>
 <p>Or indent several lines of code by at least four spaces, as in:</p>
 <pre><code>// Some comments
 line 1 of code
 line 2 of code
 line 3 of code</code></pre>
+<h4>Code &quot;fences&quot;</h4>
 <p>Or wrap the code with backtick &quot;fences&quot; before and after the code: <code>``` </code></p>
 <pre><code class="lang-md">line 1 of code
 line 2 of code
 line 3 of code</code></pre>
+<h4>Code highlighting</h4>
 <p>GFM, or &quot;GitHub Flavored Markdown&quot; also supports syntax highlighting. To activate it, simply add the file extension of the language you want to use directly after the first &quot;fence&quot;: <code>``` js</code> </p>
 <pre><code class="lang-js">assemble: {
   // Files to build into pages
@@ -116,158 +65,14 @@ line 3 of code</code></pre>
     dest: &#39;dist/&#39;
   }
 }</code></pre>
-<p>The latter option makes Markdown retain all whitespace—as opposed to the usual behaviour, which, by removing line breaks and excess spaces, would break indentation and code layout.</p>
-<h2>Escaping</h2>
-<p>Use <code>\</code> for escaping code, such as handlebars templates, so the following:</p>
-<pre><code class="lang-md">{{ page.title }}</code></pre>
-<p>would translate literally.</p>
-<h2>Line breaks</h2>
-<p>When you do want to insert a break tag using Markdown, you end a line with two or more spaces, then type return. For example:</p>
-<pre><code class="lang-md">def show_results
-tag_br space space
-end</code></pre>
-<p>Result:</p>
-<pre><code class="lang-html">def show_results
-
-end</code></pre>
-<p>You can also use two newlines. For example:</p>
-<pre><code>sentence A
-
-sentence B</code></pre>
-<p>Result:</p>
-<pre><code class="lang-html">sentence A
-sentence B</code></pre>
-<h2>Blockquotes</h2>
-<blockquote>
-<p>&quot;This entire paragraph of text will be enclosed in an HTML blockquote element.
-Blockquote elements are reflowable. You may arbitrarily
-wrap the text to your liking, and it will all be parsed
-into a single blockquote element.&quot;</p>
-</blockquote>
-<pre><code class="lang-md">&gt; &quot;This entire paragraph of text will be enclosed in an HTML blockquote element.
-Blockquote elements are reflowable. You may arbitrarily
-wrap the text to your liking, and it will all be parsed
-into a single blockquote element.&quot;</code></pre>
-<blockquote>
-<p>Blockquotes are like quoted text in email replies</p>
-<blockquote>
-<p>And, they can be nested</p>
-</blockquote>
-</blockquote>
-<p>The above would translate into the following HTML:</p>
-<pre><code class="lang-html">&lt;blockquote&gt;&lt;p&gt;This entire paragraph of text will be enclosed in an HTML blockquote element. Blockquote
-elements are reflowable. You may arbitrarily wrap the text to your liking, and it will all
-be parsed into a single blockquote element.&lt;/p&gt;&lt;/blockquote&gt;</code></pre>
-<h2>External links</h2>
-<p>Links may be included inline. Here is a markdown link to <a href="https://github.com/assemble/assemble">Assemble</a>, and a literal <a href="https://github.com/assemble/assemble/">https://github.com/assemble/assemble/</a>. </p>
-<pre><code class="lang-md">[link text here](link.address.here)
-Ex. [Markdown](http://en.wikipedia.com/wiki/Markdown)</code></pre>
-<p>Literal links</p>
-<pre><code class="lang-md">&lt;https://github.com/assemble/assemble/&gt;</code></pre>
-<p>Alternatively, links can be placed in footnotes outside of the paragraph, being referenced with some sort of reference tag. For example, including the following inline:</p>
-<pre><code class="lang-md">[link text here][linkref]</code></pre>
-<p>would produce a link if the following showed up outside of the paragraph (or at the end of the document):</p>
-<pre><code class="lang-md">
-[linkref]: link.address.here &quot;link title here&quot;</code></pre>
-<h2>Images</h2>
-<p>Images have similar syntax to links, except the square brackets are preceded by an exclamation point.</p>
-<pre><code class="lang-md">![Alt text](http://octodex.github.com/images/minion.png)</code></pre>
-<p><img src="http://octodex.github.com/images/minion.png" alt="Alt text"></p>
-<p>or</p>
-<pre><code class="lang-md">![Alt text](http://octodex.github.com/images/stormtroopocat.jpg &quot;The Stormtroopocat&quot;)</code></pre>
-<p><img src="http://octodex.github.com/images/stormtroopocat.jpg" alt="Alt text" title="The Stormtroopocat"></p>
-<p>Like links, Images also have a footnote style syntax</p>
-<pre><code class="lang-md">![Alt text][id]</code></pre>
-<p>![Alt text][id]</p>
-<p>With a reference later in the document defining the URL location:</p>
-<pre><code class="lang-md">
-[id]: http://octodex.github.com/images/dojocat.jpg  &quot;The Dojocat&quot;</code></pre>
-<h2>Horizontal rules</h2>
-<p>Horizontal rules are created by placing three or more hyphens, asterisks, or underscores on a line by themselves. You may use spaces between the hyphens or asterisks. Each of the following lines will produce a horizontal rule:</p>
-<pre><code class="lang-md">* * *
-***
-*****
-- - -
----------------------------------------</code></pre>
-<hr>
-<h2><em>**</em></h2>
-<h2>Tables</h2>
-<table>
-<thead>
-<tr>
-<th>Heading 1</th>
-<th>Heading 2</th>
-<th>Heading 3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Lorem ipsum</strong></td>
-<td><code>lorem ipsum</code></td>
-<td>lorem ipsum</td>
-</tr>
-<tr>
-<td><strong>Lorem ipsum</strong></td>
-<td><code>lorem ipsum</code></td>
-<td>lorem ipsum</td>
-</tr>
-<tr>
-<td><strong>Lorem ipsum</strong></td>
-<td><code>lorem ipsum</code></td>
-<td>lorem ipsum</td>
-</tr>
-<tr>
-<td><strong>Lorem ipsum</strong></td>
-<td><code>lorem ipsum</code></td>
-<td>lorem ipsum</td>
-</tr>
-<tr>
-<td><strong>Lorem ipsum</strong></td>
-<td><code>lorem ipsum</code></td>
-<td>lorem ipsum</td>
-</tr>
-<tr>
-<td><strong>Lorem ipsum</strong></td>
-<td><code>lorem ipsum</code></td>
-<td>lorem ipsum</td>
-</tr>
-<tr>
-<td><strong>Lorem ipsum</strong></td>
-<td><code>lorem ipsum</code></td>
-<td>lorem ipsum</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>A colon can be used to right align text within a column: <code>| -------: |</code></li>
-</ul>
-<h2>HTML elements</h2>
-<p>&lt;div class=&quot;alert alert-warning&quot;&gt; This is a div wrapping some <strong>markdown</strong>.&lt;/div&gt;
-
-</p>
-<p>&lt;div class=&quot;custom-class&quot; markdown=&quot;1&quot;&gt;
-This is a div wrapping some <strong>markdown</strong>.
-&lt;/div&gt;
 
 
 
 
-</p>
 
 
 
-<h3>Markdown Headings</h3>
-<h1>h1 Heading</h1>
-<h2>h2 Heading</h2>
-<h3>h3 Heading</h3>
-<h4>h4 Heading</h4>
-<h5>h5 Heading</h5>
-<h6>h6 Heading</h6>
-
-
-
-
-      <script src="dest/assets/prettify.js"></script>
+      <script src="dest/assets/highlight.js"></script>
     </div>
   </body>
 </html>

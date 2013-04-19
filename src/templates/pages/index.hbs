@@ -1,22 +1,18 @@
 ---
 title: Home
-lead: Welcome to our Site!
 wiki: https://github.com/assemble/assemble/wiki/YAML-Front-Matter
-content: src/content/headings.md
-layout: ./src/templates/layouts/home.hbs
 ---
 <div class="page-header">
   <h1>{{ title }}</h1>
-  <p class="lead">{{ lead }}</p>
 </div>
 
 <p>In this example, at the top of each page you can use 
   <a href="{{ wiki }}">YAML Front-Matter</a> for providing metadata and configuration data for the page
 </p>
 
-{{! path from project root }}
-{{{md 'src/content/reference.md'}}}
+{{! content from the path specified }}
+{{{md 'src/content/code.md'}}}
 
-{{! content specified in the YAML front-matter }}
-{{{md content}}}
+
+
 

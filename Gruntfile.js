@@ -20,14 +20,19 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         flatten: true,
-        assets: './dest/assets/',
+        assets: 'dest/assets',
         layout: 'src/templates/layouts/default.hbs',
-        partials: ['src/templates/partials/*.hbs']
+        partials: ['src/templates/partials/*.hbs'],
+        data: 'src/data/*.json',
       },
       pages: {
         files: {
-          'dest/': ['src/templates/pages/*.hbs', '!src/templates/pages/index.hbs'],
-          './': ['src/templates/pages/index.hbs']
+          'dest/': ['src/templates/pages/*.hbs', '!src/templates/pages/index.hbs']
+        }        
+      },
+      index: {
+        files: {
+          './':    ['src/templates/pages/index.hbs']
         }        
       }
     },

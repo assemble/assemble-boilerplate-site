@@ -1,10 +1,43 @@
-### Markdown Code
+## Code
 
-Ut erat nisl, `inline code` dignissim et iaculis ac, adipiscing non ipsum. Vivamus ornare hendrerit sapien ut ornare.
+#### Inline code
 
-``` html
-<!-- block code -->
-<p>Hello Workd!</p>
+To include code (formatted in monospace font), you can either surround inline code with a single backtick (`` ` ``): `some code`
+
+``` md
+`some code`
 ```
 
-Morbi dictum magna vitae mi malesuada laoreet. Proin tempus laoreet leo in lobortis. In sit amet ipsum vel massa fringilla volutpat. Aenean dictum odio in ligula egestas iaculis. Maecenas ut massa quis velit consectetur faucibus in in lectus. Praesent ac mauris nec tortor suscipit aliquam eu nec justo. Nulla facilisi. Curabitur sit amet ligula ante.
+#### Indented code
+
+Or indent several lines of code by at least four spaces, as in:
+
+    // Some comments
+    line 1 of code
+    line 2 of code
+    line 3 of code
+
+
+#### Code "fences"
+
+Or wrap the code with backtick "fences" before and after the code: ` ``` `
+
+``` md
+line 1 of code
+line 2 of code
+line 3 of code
+```
+
+#### Code highlighting
+
+GFM, or "GitHub Flavored Markdown" also supports syntax highlighting. To activate it, simply add the file extension of the language you want to use directly after the first "fence": ` ``` js ` 
+
+``` js
+assemble: {
+  // Files to build into pages
+  pages: {
+    src:  'templates/pages/*.hbs',
+    dest: 'dist/'
+  }
+}
+```
