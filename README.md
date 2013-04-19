@@ -80,16 +80,10 @@ Default: `undefined`
 Used with the `\{{assets}}` variable to resolve the relative path from the _dest file_ to the _assets_ folder.
 
 
-#### `partials`
-Type: `String`
-Default value: `'.'`
 
-A string value that is used to do something else with whatever else.
+### Usage Examples 
 
-Also note that globbing (see [minimatch](https://github.com/isaacs/minimatch)) and Lodash (underscore) templates can be use with every option.
-
-
-### Usage Examples
+Here are some examples of how you can customize the Assemble task for different use cases. Visit the [assemble-examples](https://github.com/assemble/assemble-examples) repo to see more example projects.
 
 ```js
 assemble: {
