@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Oswald:400,300);
+
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -282,7 +284,8 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
   font-size: 14px;
   font-size: 1.4rem;
   line-height: 20px;
@@ -587,7 +590,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 20px;
   text-rendering: optimizelegibility;
@@ -618,12 +621,7 @@ h3 {
 h3 {
   line-height: 30px;
 }
-h4,
-h5,
-h6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+
 h1,
 .h1 {
   font-size: 38.5;
@@ -2916,6 +2914,7 @@ button.close {
 }
 .navbar-brand {
   display: block;
+  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
   max-width: 200px;
   margin-left: auto;
   margin-right: auto;
@@ -3076,9 +3075,11 @@ button.close {
   }
   .navbar-brand {
     float: left;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    color: #000;
+    padding-top: 16px;
+    padding-bottom: 14px;
     margin-left: -10px;
+    padding-right: 30px;
   }
   .navbar .nav {
     float: left;

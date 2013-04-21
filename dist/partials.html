@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Markdown</title>
+    <meta charset="UTF-8">
+    <title>Partials</title>
     <link rel="stylesheet" href="assets/bootstrap.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=">
   </head>
   <body>
     <!-- nav partial -->
     <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <a class="navbar-brand" href="../index.html">Assemble</a>
+      <a class="navbar-brand" href="../index.html">ASSEMBLE</a>
       <ul class="nav">
         <li>
           <a href="../index.html">Home</a>
         </li>
-        <li>
+        <li class="active">
           <a href="partials.html">Partials</a>
         </li>
-        <li class="active">
+        <li>
           <a href="markdown.html">Markdown</a>
         </li>
         <li>
@@ -41,30 +43,18 @@
       <!-- pages -->
       
 <div class="page-header">
-  <h1>Markdown</h1>
+  <h1>Partials</h1>
 </div>
 
 
 
-
-<p>You&#x27;re looking at inline markdown content, wrapped with handlebars (mustache) tags!</p>
-<p>Behold... some examples:</p>
-<h1>Heading 1</h1>
-<h2>Heading 2</h2>
-<h3>Heading 3</h3>
-<h4>Heading 4</h4>
-<h5>Heading 5</h5>
-<h6>Heading 6</h6>
-<p><em>italic words</em>  </p>
-<p><strong>bold words</strong>  </p>
-<ol>
-<li>First ordered list item</li>
-<li>Second item</li>
-<li>Third Item  </li>
-</ol>
-<p>Finally, end a line with two or more spaces to do a manual line break.   </p>
+<h4>Alert example</h4>
+<div class="alert alert-info"><strong> External data example. </strong> This alert was assembled from a partial and YAML data fron in &#x27;./src/data/&#x60; </div>
 
 
+
+<h4>Button example</h4>
+<a class="btn btn-primary btn-large" href="https://github.com/assemble/assemble/"> Visit Assemble </a>
 
 
       <script src="assets/highlight.js"></script>
