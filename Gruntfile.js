@@ -10,37 +10,31 @@
 
 module.exports = function(grunt) {
 
-  // Get metadata to use in templates.
-  var pkg = grunt.file.readJSON('package.json');
-
   // Project configuration.
   grunt.initConfig({
-    pkg: pkg,
+    pkg: grunt.file.readJSON('package.json'),
 
     assemble: {
       options: {
         flatten: true,
-        assets: 'dest/assets',
+        assets: 'dist/assets',
         layout: 'src/templates/layouts/default.hbs',
-        partials: ['src/templates/partials/*.hbs'],
-        data: 'src/data/*.json',
+        partials: 'src/templates/partials/*.hbs',
+        data: 'src/data/*.{json,yml}'
       },
       pages: {
         files: {
-          'dest/': ['src/templates/pages/*.hbs', '!src/templates/pages/index.hbs']
-        }        
-      },
-      index: {
-        files: {
-          './':    ['src/templates/pages/index.hbs']
+          'dist/': ['src/templates/pages/*.hbs', '!**/index.hbs'],
+          './': ['src/templates/pages/index.hbs']
         }        
       }
     },
 
-    // Clean before rebuilding.
+    // Before generating any new files, 
+    // remove any previously-created files.
     clean: {
       dest: {
-        src: ['dest/**/*.html']
+        pages: ['dist/*.html', 'index.html']
       }
     }
   });
@@ -50,6 +44,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Default task to be run.
-  grunt.registerTask('default', ['clean', 'assemble']);
+  grunt.registerTask('default', ['clean', 'assemble', 'beautify']);
 
 };

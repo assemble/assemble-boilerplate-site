@@ -36,9 +36,10 @@ grunt.initConfig({
       flatten: true,
       assets: 'dist/assets',
       layout: 'templates/layouts/default.hbs',
-      partials: ['templates/partials/*.hbs']
+      partials: 'templates/partials/*.hbs',
+      data: 'src/data/*.{json,yml}'
     },
-    // Files to build into pages
+    // Templates to build into pages
     pages: {
       files: {
         'dist/': ['templates/pages/*.hbs']
@@ -46,6 +47,18 @@ grunt.initConfig({
     }
   }
 })
+```
+
+#### YAML Front-Matter
+YAML front-matter is optionally used at the top of each page to define metadata for the page. In order for YAML front-matter to be processed, it must be the first thing at the top of the page, and it must be wrapped properly, with three dashes above and three below:
+
+``` yaml
+---
+title: YAML Front-Matter Example
+---
+
+<h1> {{ title }} </h1>
+Page content here ...
 ```
 
 ### Options
@@ -64,7 +77,7 @@ Default: `undefined`
 
 If set, this defines the layout file to use for that [target][tasks-and-targets]. Unlike Jekyll, Assemble requires a file extension since you are not limited to using a single file type.
 
-Learn more: [options.layouts][layouts]
+Learn more about [options.layouts][layouts]
 
 #### `partials`
 Type: `Object|Array` (optional)
@@ -72,7 +85,7 @@ Default: `undefined`
 
 Specifies the Handlebars [partials][] files, or paths to the directories of files to be used. 
 
-Learn more: [options.partials][partials]
+Learn more about [options.partials][partials]
 
 #### `assets`
 Type: `String` (optional)
@@ -87,7 +100,7 @@ Default: `src/data`
 
 Retrieves data from any specified `JSON` and/or `YAML` files to populate the templates when rendered. Data gets passed through the `data` object to the options on the assemble task, then to the context in your templates. 
 
-Learn more: [data][data]
+Learn more about [data][data]
 
 ### Usage Examples 
 
