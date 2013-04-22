@@ -1,8 +1,8 @@
 /*
- * assemble-examples-basic
- * https://github.com/assemble/assemble-examples-basic
+ * Assemble, plugin for Grunt.js
+ * https://github.com/assemble/
  *
- * Copyright (c) 2013 Brian Woodward, Jon Schlinkert, contributors.
+ * Copyright (c) 2013 Upstage
  * Licensed under the MIT license.
  */
 
