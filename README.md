@@ -1,4 +1,4 @@
-# [assemble-examples-basic](http://github.com/assemble/assemble-examples-basic) [![Build Status](https://travis-ci.org/assemble/assemble-examples-basic.png)](https://travis-ci.org/assemble/assemble-examples-basic)
+# [assemble-examples-basic v0.1.1](http://github.com/assemble/assemble-examples-basic) [![Build Status](https://travis-ci.org/assemble/assemble-examples-basic.png)](https://travis-ci.org/assemble/assemble-examples-basic)
 
 > [Assemble][assemble] is a Grunt plugin that makes it dead simple to build modular sites and components from reusable **templates** and **data**.
 
@@ -57,7 +57,7 @@ YAML front-matter is optionally used at the top of each page to define metadata 
 title: YAML Front-Matter Example
 ---
 
-<h1> {{ title }} </h1>
+<h1> `{{ title }}` </h1>
 Page content here ...
 ```
 
@@ -194,8 +194,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * 2013-04-15    v0.1.0    First commit. 
  
 
-<!-- assemble links -->
-
 [download]: https://github.com/assemble/assemble-examples-basic/archive/master.zip
 [assemble]: https://github.com/assemble/assemble/
 [assemble-examples]: https://github.com/assemble/assemble-examples
@@ -204,9 +202,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 [layouts]: https://github.com/assemble/assemble/wiki/layouts
 [partials]: https://github.com/assemble/assemble/wiki/partials
 [data]: https://github.com/assemble/assemble/wiki/data
-
-
-<!-- grunt links -->
 
 [gruntfile]: http://gruntjs.com/sample-gruntfile
 [configuring tasks]: http://gruntjs.com/configuring-tasks
