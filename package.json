@@ -4,9 +4,19 @@
   "version": "0.1.1",
   "homepage": "https://github.com/assemble/assemble-examples-basic",
   "author": {
-    "name": "Jon Schlinkert",
-    "url": "http://github.com/jonschlinkert/"
+    "name": "Assemble",
+    "url": "https://github.com/assemble/assemble"
   },
+  "contributors": [
+    {
+      "name": "Jon Schlinkert",
+      "url": "https://github.com/jonschlinkert"
+    },
+    {
+      "name": "Brian Woodward",
+      "url": "https://github.com/doowb"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/assemble/assemble-examples-basic.git"
@@ -22,7 +32,7 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "assemble": "~0.3.73",
+    "assemble": "0.3.x",
     "grunt-contrib-clean": "~0.4.0"
   },
   "licenses": [
@@ -32,6 +42,7 @@
     }
   ],
   "keywords": [
+    "assemble example",
     "assemble",
     "templates",
     "handlebars",
