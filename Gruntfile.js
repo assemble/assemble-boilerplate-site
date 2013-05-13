@@ -1,5 +1,5 @@
 /*
- * Assemble, plugin for Grunt.js
+ * Assemble, component generator for Grunt.js
  * https://github.com/assemble/
  *
  * Copyright (c) 2013 Upstage
@@ -16,13 +16,35 @@ module.exports = function(grunt) {
 
     assemble: {
       options: {
-        flatten: true,
         assets: 'dist/assets',
-        layout: 'src/templates/layouts/default.hbs',
-        partials: 'src/templates/partials/*.hbs',
-        data: 'src/data/*.{json,yml}'
+        data: 'src/data/*.{json,yml}',
+        partials: [
+          'src/templates/partials/*.hbs',
+          'src/content/*.hbs'
+        ],
+      },
+      html_output: {
+        options: {
+          layout: 'src/templates/layouts/post.hbs'
+        },
+        files: [ 
+          { expand: true, cwd: 'src', src: ['posts/*.hbs', '!**/*.md.hbs'], dest: 'dist/' }
+        ]
+      },
+      markdown_output: {
+        options: {
+          ext: '',
+          layout: 'src/templates/layouts/post.md.hbs'
+        },
+        files: [ 
+          { expand: true, cwd: 'src/posts', src: ['*.md.hbs'], dest: 'dist/markdown' }
+        ]
       },
       pages: {
+        options: {
+          flatten: true,
+          layout: 'src/templates/layouts/default.hbs'
+        },
         files: {
           'dist/': ['src/templates/pages/*.hbs', '!**/index.hbs'],
           './': ['src/templates/pages/index.hbs']
@@ -34,7 +56,7 @@ module.exports = function(grunt) {
     // remove any previously-created files.
     clean: {
       dest: {
-        pages: ['dist/*.html', 'index.html']
+        pages: ['dist/**/*.{html,md}', 'index.html']
       }
     }
   });
@@ -45,5 +67,4 @@ module.exports = function(grunt) {
 
   // Default task to be run.
   grunt.registerTask('default', ['clean', 'assemble']);
-
 };
