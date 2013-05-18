@@ -1,0 +1,14 @@
+<div class="panel {{modifier}}">
+  <div class="panel-heading">{{{heading}}}</div>
+  {{{content}}}
+
+  <!-- List group -->
+  {{#if list}}
+  <hr>
+  <ul class="list-group list-group-flush">
+    {{#list}}
+      <li class="list-group-item">{{{item}}}</li>
+    {{/list}}
+  </ul>
+  {{/if}}
+</div>
