@@ -15,6 +15,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     assemble: {
+      // Task-level options
       options: {
         assets: 'dist/assets',
         data: 'src/**/*.{json,yml}',
@@ -23,7 +24,18 @@ module.exports = function(grunt) {
           'src/content/*.hbs'
         ],
       },
-      html_output: {
+      pages: {
+        // Target-level options
+        options: {
+          flatten: true,
+          layout: 'src/templates/layouts/default.hbs'
+        },
+        files: [ 
+          { expand: true, cwd: 'src/templates/pages', src: ['*.hbs', '!index.hbs'], dest: 'dist/' },
+          { expand: true, cwd: 'src/templates/pages', src: ['index.hbs'], dest: './' }
+        ]
+      },
+      posts: {
         options: {
           layout: 'src/templates/layouts/post.hbs'
         },
@@ -31,7 +43,8 @@ module.exports = function(grunt) {
           { expand: true, cwd: 'src', src: ['posts/*.hbs', '!**/*.md.hbs'], dest: 'dist/' }
         ]
       },
-      markdown_output: {
+      // Example of how to build markdown pages
+      markdown: {
         options: {
           ext: '',
           layout: 'src/templates/layouts/post.md.hbs'
@@ -39,33 +52,13 @@ module.exports = function(grunt) {
         files: [
           { expand: true, cwd: 'src/posts', src: ['*.md.hbs'], dest: 'dist/markdown' }
         ]
-      },
-      components: {
-        options: {
-          layout: 'src/templates/layouts/default.hbs'
-        },
-        files: [ 
-          { expand: true, cwd: 'src/templates/pages', src: ['components.hbs'], dest: 'dist/' }
-        ]
-      },
-      pages: {
-        options: {
-          flatten: true,
-          layout: 'src/templates/layouts/default.hbs'
-        },
-        files: {
-          'dist/': ['src/templates/pages/*.hbs', '!**/index.hbs', '!**/components.hbs'],
-          './': ['src/templates/pages/index.hbs']
-        }        
       }
     },
 
     // Before generating any new files, 
     // remove any previously-created files.
     clean: {
-      dest: {
-        pages: ['dist/**/*.{html,md}', 'index.html']
-      }
+      all: ['dist/**/*.{html,md}', 'index.html']
     }
   });
 

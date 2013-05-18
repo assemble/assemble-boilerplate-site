@@ -1,5 +1,6 @@
-<div class="panel {{modifier}}">
-  <div class="panel-heading">{{{heading}}}</div>
+<div class="{{class}} {{modifier}}">
+  {{#if heading}}<div class="{{class}}-heading">{{{heading}}}</div>{{/if}}
+  {{#if bar}}<div class="progress-bar {{bar-modifier}}" style="width: {{bar}}%"></div>{{/if}}
   {{{content}}}
 
   <!-- List group -->
