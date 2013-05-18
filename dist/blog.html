@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="assets/bootstrap.css">
+  </head>
+  <body>
+    <!-- nav partial -->
+    <div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">ASSEMBLE</a>
+      <ul class="nav">
+        <li>
+          <a href="../index.html">Home</a>
+        </li>
+        <li>
+          <a href="docs.html">Docs</a>
+        </li>
+        <li>
+          <a href="examples.html">Examples</a>
+        </li>
+        <li>
+          <a href="markdown.html">Markdown</a>
+        </li>
+        <li class="active">
+          <a href="blog.html">Blog</a>
+        </li>
+      </ul>
+      <ul class="nav pull-right">
+        <li> <a href="https://github.com/assemble/assemble-examples">More Examples</a> </li>
+        <li> <a href="https://github.com/assemble/assemble/">Visit Assemble</a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <!-- body partial, used for adding pages to layout -->
+      
+<div class="page-header">
+  <h1>Blog</h1>
+</div>
+
+
+<h1>This is a simple blog</h1>
+
+
+<h2><hr>
+<p>title: Post, in markdown format
+description: Multiple ways to include content</p>
+<h2>posted: May 10th, 2013</h2>
+<h1> </h1>
+<hr>
+<p><strong>Why use Grunt?</strong>
+The Grunt ecosystem is huge and it&#39;s growing every day. With literally
+hundreds of plugins to choose from, you can use Grunt to automate just
+about anything with a minimum of effort. If someone hasn&#39;t already
+built what you need, authoring and publishing your own Grunt plugin to
+npm is a breeze.</p>
+<h2>Table of Contents</h2>
+<p>An experimental TOC helper that finds headers in the given path, parses
+them and turns them into links.</p>
+<h2>[Getting Started](#Getting Started)</h2>
+<h1>[h1 Heading](#h1 Heading)</h1>
+<h2>[h2 Heading](#h2 Heading)</h2>
+<h3>[h3 Heading](#h3 Heading)</h3>
+<h4>[h4 Heading](#h4 Heading)</h4>
+<h5>[h5 Heading](#h5 Heading)</h5>
+<h6>[h6 Heading](#h6 Heading)</h6>
+<h2>[Language Features](#Language Features)</h2>
+<h3><a href="#Images">Images</a></h3>
+<h3><a href="#Tables">Tables</a></h3>
+<hr>
+<h2>Partial</h2>
+<p>This is a <em>Handlebars partial</em>. Notice we have to add the <code>.md</code> extension here because you don&#39;t normally need an extension in a partial, but we&#39;re referencing a file with the extension <code>.md.hbs</code>, so we need to tell the engine that this is correct. </p>
+<h2>Getting Started</h2>
+<h1>h1 Heading</h1>
+<h2>h2 Heading</h2>
+<h3>h3 Heading</h3>
+<h4>h4 Heading</h4>
+<h5>h5 Heading</h5>
+<h6>h6 Heading</h6>
+<p>Nunc vestibulum leo a lorem pulvinar ut convallis odio iaculis. Sed a sapien nec libero semper scelerisque at eget nisl. Vestibulum urna ligula, facilisis sed blandit nec, placerat eget augue. Nulla ultrices hendrerit mauris, quis hendrerit mi bibendum eget. Etiam quam justo, sollicitudin in tempus ac, tristique eget elit. Vivamus fermentum libero id magna mollis eleifend. Integer blandit libero in est hendrerit sollicitudin. Pellentesque ac orci id magna ullamcorper laoreet ut vitae nisl. </p>
+<blockquote>
+<p>Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. </p>
+</blockquote>
+<p>Aliquam erat volutpat. Ut imperdiet condimentum nisi non aliquet. Vivamus sit amet consectetur sapien. Phasellus varius interdum urna, eget mattis justo faucibus vel. Aliquam elementum, magna ut pretium molestie, erat orci eleifend tellus, sit amet rhoncus arcu odio eu sem. Proin lobortis mi ac ante luctus porta. Mauris sit amet vestibulum orci.</p>
+<blockquote>
+<p>Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. </p>
+<blockquote>
+<p>Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.</p>
+</blockquote>
+</blockquote>
+<p>Aliquam ut augue turpis, eget mattis nibh. Suspendisse urna mauris, pharetra vitae laoreet non, tempor sit amet metus. Donec risus diam, tincidunt id elementum sed, ultrices id neque. Curabitur sed nisl non sem gravida malesuada et dapibus justo. Nullam in sagittis magna. Aliquam erat volutpat. Suspendisse potenti. Fusce id posuere orci. In sed vestibulum dolor. Phasellus volutpat eleifend purus sed vestibulum. Ut dolor massa, volutpat nec elementum vel, vestibulum in mi. Donec fringilla dignissim risus.</p>
+<hr>
+<h2><code>{{md}}</code> helper</h2>
+<p>This is a <em>markdown helper</em>. </p>
+<p><h2>Code</h2></p>
+<p><h4>Inline code</h4></p>
+<p><p>To include code (formatted in monospace font), you can either surround inline code with a single backtick (<code>` </code>): <code>some code</code></p></p>
+<pre><code class="lang-md">`some code`</code></pre>
+<h4>Indented code</h4>
+<p>Or indent several lines of code by at least four spaces, as in:</p>
+<pre><code>// Some comments
+line 1 of code
+line 2 of code
+line 3 of code</code></pre>
+<h4>Code &quot;fences&quot;</h4>
+<p>Or wrap the code with backtick &quot;fences&quot; before and after the code: <code>``` </code></p>
+<pre><code class="lang-md">line 1 of code
+line 2 of code
+line 3 of code</code></pre>
+<h4>Code highlighting</h4>
+<p>GFM, or &quot;GitHub Flavored Markdown&quot; also supports syntax highlighting. To activate it, simply add the file extension of the language you want to use directly after the first &quot;fence&quot;: <code>``` js</code> </p>
+<pre><code class="lang-js">assemble: {
+  // Files to build into pages
+  pages: {
+    src:  &#39;templates/pages/*.hbs&#39;,
+    dest: &#39;dist/&#39;
+  }
+}</code></pre>
+
+
+<hr>
+<h2><code>{{include}}</code> helper</h2>
+<p>A third way to &quot;include&quot; content, using the <em>include</em> helper.</p>
+<p>Partial <strong>./src/content/chapter-01-getting-started.md.hbs</strong> not found.</p>
+</h2>
+
+<h2><hr>
+<p>title: Post, in markdown format</p>
+<h2>posted: May 12th, 2013</h2>
+<h1> </h1>
+<p>Assemble makes it dead simple to build modular sites and components from reusable templates and data.</p>
+</h2>
+
+
+
+      <script src="assets/highlight.js"></script>
+    </div>
+  </body>
+</html>
