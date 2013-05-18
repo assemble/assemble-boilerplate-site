@@ -200,6 +200,11 @@ assemble: {
 + [http://twitter.com/jonschlinkert](http://twitter.com/jonschlinkert)  
 
 
+## Thanks
+
+To [@alesk](https://github.com/alesk) for helping to create some of the examples in this repo.
+
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Use [Assemble][assemble] to build and maintain your gh-pages, blog or documentation. Lint and test your code using [Grunt](http://gruntjs.com/).
 

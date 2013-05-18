@@ -17,9 +17,9 @@ module.exports = function(grunt) {
     assemble: {
       options: {
         assets: 'dist/assets',
-        data: 'src/data/*.{json,yml}',
+        data: 'src/**/*.{json,yml}',
         partials: [
-          'src/templates/partials/*.hbs',
+          'src/templates/partials/**/*.hbs',
           'src/content/*.hbs'
         ],
       },
@@ -36,8 +36,16 @@ module.exports = function(grunt) {
           ext: '',
           layout: 'src/templates/layouts/post.md.hbs'
         },
-        files: [ 
+        files: [
           { expand: true, cwd: 'src/posts', src: ['*.md.hbs'], dest: 'dist/markdown' }
+        ]
+      },
+      components: {
+        options: {
+          layout: 'src/templates/layouts/default.hbs'
+        },
+        files: [ 
+          { expand: true, cwd: 'src/templates/pages', src: ['components.hbs'], dest: 'dist/' }
         ]
       },
       pages: {
@@ -46,7 +54,7 @@ module.exports = function(grunt) {
           layout: 'src/templates/layouts/default.hbs'
         },
         files: {
-          'dist/': ['src/templates/pages/*.hbs', '!**/index.hbs'],
+          'dist/': ['src/templates/pages/*.hbs', '!**/index.hbs', '!**/components.hbs'],
           './': ['src/templates/pages/index.hbs']
         }        
       }
