@@ -68,7 +68,7 @@ Visit [Assemble's documentation][wiki] to learn about the available task and tar
 Type: `Boolean` (optional)
 Default: `false`
 
-Remove anything after (and including) the first "." in the destination path, then append this value. In other words, when they are are generated from different source folders this "flattens" them into the same destination directory. See [building the files object dynamically][files-object] for more information on files formats.
+Remove anything after (and including) the first "." in the destination path, then append this value. In other words, when they are generated from different source folders this "flattens" them into the same destination directory. See [building the files object dynamically][files-object] for more information on files formats.
 
 
 #### `layout`
