@@ -1,4 +1,4 @@
-# [boilerplate-site v0.1.1](http://github.com/assemble/boilerplate-site) [![Build Status](https://travis-ci.org/assemble/boilerplate-site.png)](https://travis-ci.org/assemble/boilerplate-site)
+# [boilerplate-site v0.1.1](http://github.com/assemble/boilerplate-site)
 
 > Boilerplate for generating a basic static site with Assemble.
 
