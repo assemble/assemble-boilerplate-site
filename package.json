@@ -1,8 +1,8 @@
 {
-  "name": "assemble-examples-basic",
-  "description": "Demonstrates how to build a basic static site with Assemble. Example includes layouts, pages, partials, and markdown content.",
+  "name": "boilerplate-site",
+  "description": "Boilerplate for generating a basic static site with Assemble.",
   "version": "0.1.1",
-  "homepage": "https://github.com/assemble/assemble-examples-basic",
+  "homepage": "https://github.com/assemble/boilerplate-site",
   "author": {
     "name": "Assemble",
     "url": "https://github.com/assemble/assemble"
@@ -19,10 +19,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/assemble/assemble-examples-basic.git"
+    "url": "https://github.com/assemble/boilerplate-site.git"
   },
   "bugs": {
-    "url": "https://github.com/assemble/assemble-examples-basic/issues"
+    "url": "https://github.com/assemble/boilerplate-site/issues"
   },
   "engines": {
     "node": ">=0.8"
@@ -32,13 +32,13 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "assemble": "~0.3.77",
-    "grunt-contrib-clean": "~0.4.0"
+    "grunt-contrib-clean": "~0.5.0",
+    "assemble": "~0.4.2"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/assemble/assemble-examples-basic/blob/master/LICENSE-MIT"
+      "url": "https://github.com/assemble/boilerplate-site/blob/master/LICENSE-MIT"
     }
   ],
   "keywords": [

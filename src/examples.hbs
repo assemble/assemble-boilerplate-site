@@ -4,9 +4,15 @@ description: "One Partial, Many Possibilities"
 ---
 <div class="page-header">
   <h1>{{title}}</h1>
-  <p class="lead"></p> 
+  <p class="lead">{{description}}</p>
 </div>
 
+
+<h2>Alert example</h2>
+{{> alert }}
+
+<h2>Button example</h2>
+{{> button }}
 
 <h2>"Panels"</h2>
 <p class="lead">Every "module" on this page is constructed from the same "partial", the only difference is the data supplied to each one from <code>module.json</code>.</p>
@@ -45,7 +51,7 @@ description: "One Partial, Many Possibilities"
       {{> module module.alert-danger }}
       {{> module module.alert-block }}
 
-      
+
       <h3>Progress Bars</h3>
       <div class="well">
         {{> module module.progress-info }}

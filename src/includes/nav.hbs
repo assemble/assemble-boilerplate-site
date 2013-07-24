@@ -1,0 +1,22 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="navbar-brand" href="{{#isnt basename "index"}}../{{/isnt}}index.html">ASSEMBLE</a>
+      <ul class="nav">
+        <li{{#is basename "index"}} class="active"{{/is}}>
+          <a href="{{#isnt basename "index"}}../{{/isnt}}index.html">Home</a>
+        </li>
+        <li{{#is basename "markdown"}} class="active"{{/is}}>
+          <a href="{{#is basename "index"}}site/{{/is}}markdown.html">Markdown</a>
+        </li>
+        <li{{#is basename "examples"}} class="active"{{/is}}>
+          <a href="{{#is basename "index"}}site/{{/is}}examples.html">Examples</a>
+        </li>
+      </ul>
+      <ul class="nav pull-right">
+        <li> <a href="https://github.com/assemble/assemble-boilerplates">More Examples</a> </li>
+        <li> <a href="https://github.com/assemble/assemble/">Visit Assemble</a> </li>
+      </ul>
+    </div>
+  </div>
+</div>

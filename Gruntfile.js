@@ -17,53 +17,19 @@ module.exports = function(grunt) {
     assemble: {
       // Task-level options
       options: {
-        assets: 'dist/assets',
+        flatten: true,
         data: 'src/**/*.{json,yml}',
-        partials: [
-          'src/templates/partials/**/*.hbs',
-          'src/content/*.hbs'
-        ],
+        assets: 'site/assets',
+        helpers: 'src/helpers/helper-*.js',
+        layoutdir: 'src/layouts',
+        partials: ['src/includes/**/*.hbs'],
       },
-      pages: {
+      site: {
         // Target-level options
-        options: {
-          flatten: true,
-          layout: 'src/templates/layouts/default.hbs'
-        },
+        options: {layout: 'default.hbs'},
         files: [
-          { expand: true, cwd: 'src/templates/pages', src: ['*.hbs', '!index.hbs'], dest: 'dist/' },
-          { expand: true, cwd: 'src/templates/pages', src: ['index.hbs'], dest: './' }
-        ]
-      },
-      posts: {
-        options: {
-          layout: 'src/templates/layouts/post.hbs'
-        },
-        files: [
-          { expand: true, cwd: 'src', src: ['posts/*.hbs', '!**/*.md.hbs'], dest: 'dist/' }
-        ]
-      },
-      // Example of how to build markdown pages
-      markdown: {
-        options: {
-          ext: '',
-          layout: 'src/templates/layouts/post.md.hbs'
-        },
-        files: [
-          { expand: true, cwd: 'src/posts', src: ['*.md.hbs'], dest: 'dist/markdown' }
-        ]
-      },
-      // Example of loading custom helpers
-      helpers: {
-        options: {
-          flatten: true,
-          registerFunctions: function(engine) {
-            var helpers = require('./lib/custom-helpers');
-            engine.engine.registerFunctions(helpers);
-          }
-        },
-        files: [
-          { expand: true, cwd: 'src/templates/custom-helpers', src: ['helpers.hbs'], dest: 'dist/' }
+          { expand: true, cwd: 'src', src: ['*.hbs', '!index.hbs'], dest: 'site/' },
+          { expand: true, cwd: 'src', src: ['index.hbs'], dest: './' }
         ]
       }
     },
@@ -71,7 +37,7 @@ module.exports = function(grunt) {
     // Before generating any new files,
     // remove any previously-created files.
     clean: {
-      all: ['dist/**/*.{html,md}', 'index.html']
+      all: ['site/**/*.{html,md}', 'index.html']
     }
   });
 

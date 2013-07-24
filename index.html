@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="dist/assets/bootstrap.css">
+    <link rel="stylesheet" href="site/assets/bootstrap.css">
   </head>
   <body>
     <!-- nav partial -->
@@ -16,20 +16,14 @@
           <a href="index.html">Home</a>
         </li>
         <li>
-          <a href="dist/docs.html">Docs</a>
+          <a href="site/markdown.html">Markdown</a>
         </li>
         <li>
-          <a href="dist/examples.html">Examples</a>
-        </li>
-        <li>
-          <a href="dist/markdown.html">Markdown</a>
-        </li>
-        <li>
-          <a href="dist/blog.html">Blog</a>
+          <a href="site/examples.html">Examples</a>
         </li>
       </ul>
       <ul class="nav pull-right">
-        <li> <a href="https://github.com/assemble/assemble-examples">More Examples</a> </li>
+        <li> <a href="https://github.com/assemble/assemble-boilerplates">More Examples</a> </li>
         <li> <a href="https://github.com/assemble/assemble/">Visit Assemble</a> </li>
       </ul>
     </div>
@@ -41,25 +35,19 @@
       <!-- body partial, used for adding pages to layout -->
       
 
-<h1><a href="http://github.com/assemble/assemble-examples-basic">assemble-examples-basic v0.1.1</a> <a href="https://travis-ci.org/assemble/assemble-examples-basic"><img src="https://travis-ci.org/assemble/assemble-examples-basic.png" alt="Build Status"></a></h1>
+<h1><a href="http://github.com/assemble/boilerplate-site">boilerplate-site v0.1.1</a> <a href="https://travis-ci.org/assemble/boilerplate-site"><img src="https://travis-ci.org/assemble/boilerplate-site.png" alt="Build Status"></a></h1>
 <blockquote>
-<p><a href="https://github.com/assemble/assemble/">Assemble</a> is a Grunt plugin that makes it dead simple to build modular sites and components from reusable <strong>templates</strong> and <strong>data</strong>.</p>
+<p>Boilerplate for generating a basic static site with Assemble.</p>
 </blockquote>
-<p>The example shows how to construct a very basic site using:</p>
-<ul>
-<li>Layouts</li>
-<li>Pages</li>
-<li>Partials</li>
-<li>YAML Front-matter</li>
-<li>Markdown content</li>
-</ul>
+<h3>NOTICE: THIS BOILERPLATE IS BEING REFACTORED</h3>
+<p>You may find outdated information or examples in this project. While we&#39;re refactoring, you might be more interested in <a href="http://github.com/assemble/assemble-bootstrap">assemble-bootstrap</a> in the meantime.</p>
 <h2>Getting Started</h2>
 <ul>
-<li><strong><a href="https://github.com/assemble/assemble-examples-basic/archive/master.zip">Download this project</a></strong> and unzip it into a new folder.  </li>
+<li><strong><a href="https://github.com/assemble/boilerplate-site/archive/master.zip">Download this project</a></strong> and unzip it into a new folder.</li>
 <li>In the project folder, run <code>npm install</code> to install <a href="https://github.com/assemble/assemble/">Assemble</a>, <a href="http://gruntjs.com/">Grunt</a> and any other dependencies.</li>
 <li>Once the dependencies are installed you may run <code>grunt assemble</code> to build the example project.</li>
 </ul>
-<p>If you haven&#39;t used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a>, as well as install and use Grunt plugins. </p>
+<p>If you haven&#39;t used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a>, as well as install and use Grunt plugins.</p>
 <h2>The &quot;assemble&quot; task</h2>
 <h3>Overview</h3>
 <p>In the project&#39;s Gruntfile, the example <code>assemble</code> task is pre-loaded with paths and options following standard Grunt.js conventions:</p>
@@ -82,137 +70,14 @@
     }
   }
 })</code></pre>
-<h4>YAML Front-Matter</h4>
-<p>YAML front-matter is optionally used at the top of each page to define metadata for the page. In order for YAML front-matter to be processed, it must be the first thing at the top of the page, and it must be wrapped properly, with three dashes above and three below:</p>
-<pre><code class="lang-yaml">---
-title: YAML Front-Matter Example
----
-
-&lt;h1&gt; `Home` &lt;/h1&gt;
-Page content here ...</code></pre>
-<h3>Options</h3>
-<p>Visit <a href="https://github.com/assemble/assemble/wiki">Assemble&#39;s documentation</a> to learn about the available task and target options as well as how to configure them. Also, if are not yet familiar with Grunt.js, please consider visiting the Grunt documentation to learn more about [configuring tasks][configuring-tasks]. </p>
-<h4><code>flatten</code></h4>
-<p>Type: <code>Boolean</code> (optional)
-Default: <code>false</code></p>
-<p>Remove anything after (and including) the first &quot;.&quot; in the destination path, then append this value. In other words, when they are are generated from different source folders this &quot;flattens&quot; them into the same destination directory. See <a href="http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically">building the files object dynamically</a> for more information on files formats.</p>
-<h4><code>layout</code></h4>
-<p>Type: <code>String</code> (optional)
-Default: <code>undefined</code></p>
-<p>If set, this defines the layout file to use for that <a href="http://gruntjs.com/configuring-tasks#task-configuration-and-targets">target</a>. Unlike Jekyll, Assemble requires a file extension since you are not limited to using a single file type.</p>
-<p>Learn more about <a href="https://github.com/assemble/assemble/wiki/layouts">options.layouts</a></p>
-<h4><code>partials</code></h4>
-<p>Type: <code>Object|Array</code> (optional)
-Default: <code>undefined</code> </p>
-<p>Specifies the Handlebars <a href="https://github.com/assemble/assemble/wiki/partials">partials</a> files, or paths to the directories of files to be used. </p>
-<p>Learn more about <a href="https://github.com/assemble/assemble/wiki/partials">options.partials</a></p>
-<h4><code>assets</code></h4>
-<p>Type: <code>String</code> (optional)
-Default: <code>undefined</code></p>
-<p>Used with the <code>dist/assets</code> variable to resolve the relative path from the <em>dest file</em> to the <em>assets</em> folder.</p>
-<h4><code>data</code></h4>
-<p>Type: <code>Object|Array</code> (optional)
-Default: <code>src/data</code></p>
-<p>Retrieves data from any specified <code>JSON</code> and/or <code>YAML</code> files to populate the templates when rendered. Data gets passed through the <code>data</code> object to the options on the assemble task, then to the context in your templates. </p>
-<p>Learn more about <a href="https://github.com/assemble/assemble/wiki/data">data</a></p>
-<h3>Usage Examples</h3>
-<p>Here are some examples of how you can customize the Assemble task for different use cases. Visit the <a href="https://github.com/assemble/assemble-examples">assemble-examples</a> repo to see more example projects.</p>
-<pre><code class="lang-js">assemble: {
-  // &quot;global&quot; task-level options
-  options: {
-    flatten: true
-    data: &#39;src/data/global/**/*.{yml,json}&#39; // &quot;global&quot; data
-  },
-
-  docs: {
-    // target-level options
-    options: {
-      assets: &#39;dist/docs/assets&#39;,
-      layout: &#39;templates/layouts/docs-layout.hbs&#39;
-      partials: [
-        &#39;templates/docs/partials/*.hbs&#39;,
-        &#39;templates/docs/snippets/*.hbs&#39;
-      ],
-      data: &#39;src/data/docs/**/*.{yml,json}&#39;,
-      ext: &#39;.html&#39;
-    },
-    &#39;docs/&#39;: [
-      &#39;templates/docs/pages/**/*.md.hbs&#39;,
-      &#39;templates/docs/pages/**/*.hbs&#39;
-    ]
-  },
-
-  components: {
-    options: {
-      assets: &#39;dist/docs/assets&#39;,
-      layout: &#39;templates/layouts/component-layout.hbs&#39;
-      partials: [
-        &#39;templates/docs/partials/*.hbs&#39;,
-        &#39;templates/docs/snippets/*.hbs&#39;
-      ],
-      data: &#39;src/data/**/*.{yml,json}&#39;
-    },
-    files: {
-      // Here we build &quot;partials&quot; and &quot;snippets&quot; into pages
-      // but we still specify these in options.partials since
-      // some partials &quot;pull in&quot; other partials. 
-      &#39;docs/components/&#39;: [
-        &#39;templates/partials/**/*.hbs&#39;, 
-        &#39;templates/snippets/**/*.hbs&#39;
-      ]
-    }
-  },
-
-  blog: {
-    options: {
-      assets: &#39;dist/blog/assets&#39;,
-      layout: &#39;templates/layouts/blog-layout.hbs&#39;
-      partials: [
-        &#39;templates/blog/posts/*.md&#39;, // posts as partials
-        &#39;templates/blog/partials/*.hbs&#39;,
-        &#39;templates/blog/snippets/*.hbs&#39;
-      ],
-      data: &#39;src/data/blog/**/*.{yml,json}&#39;
-    },
-    src:  [&#39;templates/blog/pages/**/*.md.hbs&#39;], // markdown &quot;templates&quot;
-    dest: &#39;dist/&#39;
-  },
-
-  readme: {
-    options: {
-      data: &#39;path/to/readme.yml&#39;
-    },
-    &#39;./&#39;: [&#39;path/to/readme.md.hbs&#39;]
-  },
-
-  glob_to_multiple: {
-    expand: true,
-    flatten: true,
-    cwd: &#39;path/to/templates&#39;,
-    src: [&#39;**/*.hbs&#39;],
-    dest: &#39;path/to/dest/&#39;,
-    ext: &#39;.md&#39;
-  }
-}</code></pre>
-<h2>Authors</h2>
-<p><strong>Brian Woodward</strong></p>
-<ul>
-<li><a href="http://github.com/doowb"><a href="http://github.com/doowb">http://github.com/doowb</a></a>  </li>
-<li><a href="http://twitter.com/doowb"><a href="http://twitter.com/doowb">http://twitter.com/doowb</a></a>  </li>
-</ul>
+<h2>Boilerplate Author</h2>
 <p><strong>Jon Schlinkert</strong></p>
 <ul>
-<li><a href="http://github.com/jonschlinkert"><a href="http://github.com/jonschlinkert">http://github.com/jonschlinkert</a></a>  </li>
-<li><a href="http://twitter.com/jonschlinkert"><a href="http://twitter.com/jonschlinkert">http://twitter.com/jonschlinkert</a></a>  </li>
+<li><a href="http://github.com/jonschlinkert"><a href="http://github.com/jonschlinkert">http://github.com/jonschlinkert</a></a></li>
+<li><a href="http://twitter.com/jonschlinkert"><a href="http://twitter.com/jonschlinkert">http://twitter.com/jonschlinkert</a></a></li>
 </ul>
-<h2>Thanks</h2>
-<p>To <a href="https://github.com/alesk">@alesk</a> for helping to create some of the examples in this repo.</p>
 <h2>Contributing</h2>
 <p>In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Use <a href="https://github.com/assemble/assemble/">Assemble</a> to build and maintain your gh-pages, blog or documentation. Lint and test your code using <a href="http://gruntjs.com/">Grunt</a>.</p>
-<h2>Release History</h2>
-<ul>
-<li>2013-04-15    v0.1.0    First commit. </li>
-</ul>
 
 
 
@@ -220,7 +85,7 @@ Default: <code>src/data</code></p>
 
 
 
-      <script src="dist/assets/highlight.js"></script>
+      <script src="site/assets/highlight.js"></script>
     </div>
   </body>
 </html>
