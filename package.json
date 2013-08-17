@@ -33,7 +33,7 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
-    "assemble": "~0.4.2"
+    "assemble": "~0.4.4"
   },
   "licenses": [
     {
