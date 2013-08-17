@@ -24,15 +24,14 @@ module.exports = function(grunt) {
         data: 'src/**/*.{json,yml}',
         assets: '<%= site.destination %>/assets',
         helpers: 'src/helpers/helper-*.js',
-        layoutdir: 'src/layouts',
-        partials: ['src/includes/**/*.hbs'],
+        layoutdir: 'src/templates/layouts',
+        partials: ['src/templates/includes/**/*.hbs'],
       },
       site: {
         // Target-level options
         options: {layout: 'default.hbs'},
         files: [
-          { expand: true, cwd: 'src', src: ['*.hbs', '!index.hbs'], dest: '<%= site.destination %>/' },
-          { expand: true, cwd: 'src', src: ['index.hbs'], dest: './' }
+          { expand: true, cwd: 'src/templates/pages', src: ['*.hbs'], dest: '<%= site.destination %>/' }
         ]
       }
     },
@@ -40,7 +39,7 @@ module.exports = function(grunt) {
     // Before generating any new files,
     // remove any previously-created files.
     clean: {
-      all: ['<%= site.destination %>/**/*.{html,md}', 'index.html']
+      all: ['<%= site.destination %>/**/*.{html,md}']
     }
   });
 
