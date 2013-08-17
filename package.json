@@ -1,7 +1,7 @@
 {
   "name": "boilerplate-site",
   "description": "Boilerplate for generating a basic static site with Assemble.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/assemble/boilerplate-site",
   "author": {
     "name": "Assemble",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
-    "assemble": "~0.4.2"
+    "assemble": "~0.4.4"
   },
   "licenses": [
     {

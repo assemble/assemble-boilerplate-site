@@ -1,10 +1,10 @@
-# [boilerplate-site v0.1.1](http://github.com/assemble/boilerplate-site)
+# [boilerplate-site v0.1.2](http://github.com/assemble/boilerplate-site) [![Build Status](https://travis-ci.org/assemble/boilerplate-site.png)](https://travis-ci.org/assemble/boilerplate-site)
 
 > Boilerplate for generating a basic static site with Assemble.
 
 ### NOTICE: THIS BOILERPLATE IS BEING REFACTORED
 
-You may find outdated information or examples in this project. While we're refactoring, you might be more interested in [assemble-bootstrap](http://github.com/assemble/assemble-bootstrap) in the meantime.
+You may find outdated information or examples in this project. While we're refactoring, you might be more interested in [boilerplate-bootstrap](http://github.com/assemble/boilerplate-bootstrap) in the meantime.
 
 ## Getting Started
 
