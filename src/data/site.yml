@@ -3,4 +3,6 @@
 ###
 
 production: <%= production %>
-destination: ./_gh-pages
+
+#  git clone https://github.com/assemble/boilerplate-site.git -b gh-pages _gh-pages
+destination: ./_gh_pages
