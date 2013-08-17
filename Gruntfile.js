@@ -12,14 +12,17 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+    pkg : grunt.file.readJSON('package.json'),
+    site: grunt.file.readYAML('src/data/site.yml'),
 
     assemble: {
       // Task-level options
       options: {
-        flatten: true,
+        prettify: {indent: 2},
+        marked: {sanitize: false},
+        production: true,
         data: 'src/**/*.{json,yml}',
-        assets: 'site/assets',
+        assets: '<%= site.destination %>/assets',
         helpers: 'src/helpers/helper-*.js',
         layoutdir: 'src/layouts',
         partials: ['src/includes/**/*.hbs'],
@@ -28,7 +31,7 @@ module.exports = function(grunt) {
         // Target-level options
         options: {layout: 'default.hbs'},
         files: [
-          { expand: true, cwd: 'src', src: ['*.hbs', '!index.hbs'], dest: 'site/' },
+          { expand: true, cwd: 'src', src: ['*.hbs', '!index.hbs'], dest: '<%= site.destination %>/' },
           { expand: true, cwd: 'src', src: ['index.hbs'], dest: './' }
         ]
       }
@@ -37,7 +40,7 @@ module.exports = function(grunt) {
     // Before generating any new files,
     // remove any previously-created files.
     clean: {
-      all: ['site/**/*.{html,md}', 'index.html']
+      all: ['<%= site.destination %>/**/*.{html,md}', 'index.html']
     }
   });
 

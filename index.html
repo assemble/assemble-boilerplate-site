@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="site/assets/bootstrap.css">
+    <link rel="stylesheet" href="_gh-pages/assets/bootstrap.css">
   </head>
   <body>
     <!-- nav partial -->
@@ -35,7 +35,7 @@
       <!-- body partial, used for adding pages to layout -->
       
 
-<h1><a href="http://github.com/assemble/boilerplate-site">boilerplate-site v0.1.1</a> <a href="https://travis-ci.org/assemble/boilerplate-site"><img src="https://travis-ci.org/assemble/boilerplate-site.png" alt="Build Status"></a></h1>
+<h1><a href="http://github.com/assemble/boilerplate-site">boilerplate-site v0.1.1</a></h1>
 <blockquote>
 <p>Boilerplate for generating a basic static site with Assemble.</p>
 </blockquote>
@@ -51,21 +51,21 @@
 <h2>The &quot;assemble&quot; task</h2>
 <h3>Overview</h3>
 <p>In the project&#39;s Gruntfile, the example <code>assemble</code> task is pre-loaded with paths and options following standard Grunt.js conventions:</p>
-<pre><code class="lang-js">grunt.initConfig({
-  // The &quot;assemble&quot; task
+<pre><code class="language-js">grunt.initConfig({
+  <span class="comment">// The "assemble" task</span>
   assemble: {
-    // Task-level options.
+    <span class="comment">// Task-level options.</span>
     options: {
-      flatten: true,
-      assets: &#39;dist/assets&#39;,
-      layout: &#39;templates/layouts/default.hbs&#39;,
-      partials: &#39;templates/partials/*.hbs&#39;,
-      data: &#39;src/data/*.{json,yml}&#39;
+      flatten: <span class="literal">true</span>,
+      assets: <span class="string">'dist/assets'</span>,
+      layout: <span class="string">'templates/layouts/default.hbs'</span>,
+      partials: <span class="string">'templates/partials/*.hbs'</span>,
+      data: <span class="string">'src/data/*.{json,yml}'</span>
     },
-    // Templates to build into pages
+    <span class="comment">// Templates to build into pages</span>
     pages: {
       files: {
-        &#39;dist/&#39;: [&#39;templates/pages/*.hbs&#39;]
+        <span class="string">'dist/'</span>: [<span class="string">'templates/pages/*.hbs'</span>]
       }
     }
   }
@@ -85,7 +85,7 @@
 
 
 
-      <script src="site/assets/highlight.js"></script>
+      <script src="_gh-pages/assets/highlight.js"></script>
     </div>
   </body>
 </html>
