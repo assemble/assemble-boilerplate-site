@@ -1,4 +1,4 @@
-# boilerplate-site [![NPM version](https://badge.fury.io/js/boilerplate-site.png)](http://badge.fury.io/js/boilerplate-site)
+# boilerplate-site  [![Build Status](https://travis-ci.org/assemble/boilerplate-site.png)](https://travis-ci.org/assemble/boilerplate-site) 
 
 > Boilerplate for generating a basic static site with Assemble.
 
