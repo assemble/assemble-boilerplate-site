@@ -46,6 +46,7 @@ module.exports = function(grunt) {
   // Load npm plugins to provide necessary tasks.
   grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-verb');
 
   // Default task to be run.
   grunt.registerTask('default', ['clean', 'assemble']);
